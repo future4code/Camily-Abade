@@ -1,0 +1,91 @@
+body{
+    margin: 0;
+    background: #ffffe0;
+    display: inline;
+}
+.container-bar{
+    background: #EDC9FF;
+    overflow: hidden;
+}
+
+.container-bar .recheiaivos-menu{
+    text-align: center;
+}
+
+.container-bar a{
+    float: left;
+    color: D8CC34;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+
+.container-bar a:hover{
+    background-color: darkblue;
+    color: #EDC9FF ;
+}
+
+.container-bar a.home{
+    background-color: #FED4E7 ;
+    color: #F2B79F;
+}
+
+.recheiaivos-menu{
+    padding: 10px;
+    font-size: 1rem;
+    color: #FFFCE6;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 22px;
+}
+
+
+h2{
+    text-align: center;
+    margin-top: 5rem;
+    color: rgb(56, 20, 63);
+}
+
+
+.container-inputs{
+    width: 30%;
+    height: auto;
+    background-color: #6CBD9E;
+    padding: 6px;
+    border-radius: 2rem;
+    margin-left: 35%;
+    margin-top: 1rem;
+
+}
+
+input{
+    margin: 4px;
+    margin-left: 25%;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+
+button{
+    margin-left: 25%;
+    border-radius: 4px;
+    border: none;
+}
+
+
+img{
+    width: 1%;
+    height: auto;
+}
+
+footer{
+    text-align: center;
+    padding: 3px;
+    background-color: DarkSalmon;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}

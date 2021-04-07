@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    background: #ffffe0;
+    display: inline;
+}
+.container-bar{
+    background: #EDC9FF;
+    overflow: hidden;
+}
+
+.container-bar .recheiaivos-menu{
+    text-align: center;
+}
+
+.container-bar a{
+    float: left;
+    color: D8CC34;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+
+.container-bar a:hover{
+    background-color: darkblue;
+    color: #EDC9FF ;
+}
+
+.container-bar a.home{
+    background-color: #FED4E7 ;
+    color: #F2B79F;
+}
+
+.recheiaivos-menu{
+    padding: 10px;
+    font-size: 1rem;
+    color: #FFFCE6;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 22px;
+}
+
+
+
+
+.container-h1{
+    display: inline;
+}
+.container-h1 h1{
+    color: #7D6B7D;
+    margin-top: 0;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.container-h1 p{
+    color: #7D6B7D;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+
+p{
+    text-align: center;
+}
+
+
+
+img{
+    width: 1%;
+    height: auto;
+}
+
+footer{
+    text-align: center;
+    padding: 3px;
+    background-color: DarkSalmon;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}
