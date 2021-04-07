@@ -8,49 +8,46 @@
     <title>Adicionar Produto</title>
 </head>
 <body>
-    <div>
-        <p>Recheiaivos</p>
-    </div>
-    
-    <div>
-        <a href="./index.html">Página Inicial</a>
+
+    <div class="container-bar">
+        <a class="home" href="./index.html">Página Inicial</a>
         <a href="./ctrl-estoque.html">Controle de Estoque</a>
         <a href="./add-produto.html">Adicionar Produto</a>
         <a href="./funcionarios.html">Funcionários</a>
-    </div>
+        <div class="recheiaivos-menu">Recheiaivos</div>
+    </div> 
 
     
     <h2>Adicionar Produto</h2>
-    <form action="">
+    <form class="container-inputs" action="">
         <div>
-            <label for="link-foto">Link para foto: </label>
-            <input type="url" id="link-foto" name="link-foto">
+            <input type="url" id="link-foto" name="link-foto" placeholder="Insira Uma Foto">
         </div>
         
         <div>
-            <label for="descricao">Descrição do produto: </label>
-            <!-- Adicione o id apropriado para o input abaixo -->
-            <input type="text" id="descricao" name="descrição-do-produto">
+            <input type="text" id="descricao" name="descrição-do-produto" placeholder="Descrição">
         </div>
         
         <div>
-            <label for="preco">Preço (em R$): </label>
-            <!-- Adicione o id apropriado e o type para receber números abaixo -->
-            <input type="number" id="preco" name="preço-do-produto">
+            <input type="number" id="preco" name="preço-do-produto" placeholder="Preço(Em R$)">
         </div>
         
         <div>
-            <!-- Preencha as propriedades necessárias para os elementos abaixo -->
-            <label for="quantidade">Quantidade disponível: </label>
-            <input type="number" id="quantidade" name="quantidade-do-produto">
+            <input type="number" id="quantidade" name="quantidade-do-produto" placeholder="Quantidade">
         </div>
 
         <div class="form-add">
-            <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
-            <button type="">Adicionar</button>
+            <button type="submit">Adicionar</button>
         </div>
 
     </form>
+    
+    <footer class="rodapé">
+        <p>Siga-nos nas redes sociais!</p>
+        <img src="https://image.flaticon.com/icons/png/512/25/25305.png"/>
+        <img src="https://image.flaticon.com/icons/png/512/25/25425.png"/>
+        <img src="https://image.flaticon.com/icons/png/512/8/8800.png"/>
+    </footer>
 
 </body>
 </html>
