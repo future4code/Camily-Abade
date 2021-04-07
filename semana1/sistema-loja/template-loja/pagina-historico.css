@@ -1,0 +1,99 @@
+body{
+    margin: 0;
+    background: #ffffe0;
+    display: inline;
+    font-family:Verdana;
+}
+.container-bar{
+    background: #EDC9FF;
+    overflow: hidden;
+}
+
+.container-bar .recheiaivos-menu{
+    text-align: center;
+}
+
+.container-bar a{
+    float: left;
+    color: D8CC34;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+
+.container-bar a:hover{
+    background-color: darkblue;
+    color: #EDC9FF ;
+}
+
+.container-bar a.home{
+    background-color: #FED4E7 ;
+    color: #F2B79F;
+}
+
+.recheiaivos-menu{
+    padding: 10px;
+    font-size: 1rem;
+    color: #FFFCE6;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 22px;
+}
+
+
+.tabela{
+    background: #ffd3b4;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+.tabela tbody tr{
+    border: 1px solid #98ddca;
+    height: 30px;
+    cursor: pointer;
+}
+
+th{
+    color: #7b113a;
+}
+
+.tabela thead{
+    background: #ffaaa7;
+}
+
+
+.tabela input{
+    border-radius: 2px;
+    border: none;
+    width: 10rem;
+    height: 1.3rem;
+}
+
+.tabela input{
+    color: rgb(77, 77, 77);    
+}
+
+
+
+
+
+
+
+img{
+    width: 1%;
+    height: auto;
+}
+
+footer{
+    text-align: center;
+    padding: 3px;
+    background-color: DarkSalmon;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}
