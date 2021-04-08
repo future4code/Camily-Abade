@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pagina-vendas.css">
+    <title>Recheiaivos</title>
+</head>
+<body>
+    <div style="background-image:url(./img/imagens/candy.jpg)"></div>
+
+    <div class="container-bar">
+        <a class="home" href="./index.html">Página Inicial</a>
+        <a href="./ctrl-estoque.html">Controle de Estoque</a>
+        <a href="./add-produto.html">Adicionar Produto</a>
+        <a href="./funcionarios.html">Funcionários</a>
+        <a href="./pagina-vendas.html">Vendas</a>
+        <a href="./pagina-historico.html">Histórico</a>
+        <div class="recheiaivos-menu">Recheiaivos</div>
+    </div>
+        <div class="container-mae">  
+            <div class="container-filho">    
+                <form action="/action_page.php">
+                    <div>
+                        <label for="nome">Cliente</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome Do Cliente">
+                    </div>
+                    <div>
+                        <label for="vendedor">Vendedor</label>
+                        <input type="text" id="vendedor" name="nome" placeholder="Vendedor">
+                    </div>
+                    
+                    <label for="produto">Produto Comprado:</label>
+                    <select id="produto" name="produto">
+                    <option value="Café">Café Gelado</option>
+                    <option value="Carolinas">Carolinas</option>
+                    <option value="Tortinha">Tortinha Banoffe</option>
+                    <option value="Massa-folhada">Massa Folhada</option>
+                    <option value="Cup-cake">Cup-Cake</option>
+                    </select>
+                    <br>
+                    <label for="pagamento">Formas de Pagamento</label>
+                    <select name="pagamento" id="pagamento">
+                        <option value="debito">Débito/Cartão</option>
+                        <option value="dinheiro">Débito/Dinheiro</option>
+                        <option value="boleto">Boleto</option>
+                        <option value="crédito">Crédito/cartão</option>
+                    </select>
+                    <br>
+                    <input id="buttom" type="submit">
+                </form>
+            </div>
+        </div>    
+
+    <footer class="rodapé">
+        <p>Siga-nos nas redes sociais!</p>
+        <img src="https://image.flaticon.com/icons/png/512/25/25305.png"/>
+        <img src="https://image.flaticon.com/icons/png/512/25/25425.png"/>
+        <img src="https://image.flaticon.com/icons/png/512/8/8800.png"/>
+    </footer>
+
+    
+
+
+
+</body>
+</html>
