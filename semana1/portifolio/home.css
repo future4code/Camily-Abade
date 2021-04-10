@@ -209,10 +209,10 @@ table img{
 /* Background form/ formulario para contato */
 
 .background-form{
-    height: 45vh;
+    height: 40vh;
     background-color: rgb(255, 255, 255);
     width: 100%;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
     border-top: double rgb(158, 158, 158);
 
 }
@@ -220,7 +220,7 @@ table img{
 .container-form{
     width: 50%;
     height: 70%;
-    transform: translate(50%, 50%);
+    transform: translate(50%, 30%);
     border-radius: 3rem;
     background-color: rgb(238, 206, 206);
     border: dotted  rgb(182, 100, 100);
@@ -270,7 +270,16 @@ table img{
 }
 
 .rede-social{
-    background-color: teal;
-    display: absolute;
+    background-color: rgb(214, 196, 196, 0.4);
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.rede-social img{
+    width: 30px;
+    height: 30px;
 }
 
