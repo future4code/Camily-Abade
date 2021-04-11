@@ -222,8 +222,8 @@ table img{
     height: 70%;
     transform: translate(50%, 30%);
     border-radius: 3rem;
-    background-color: rgb(238, 206, 206);
-    border: dotted  rgb(182, 100, 100);
+    background-color: #eecece;
+    border: dotted  #b66464;
     
 }
 

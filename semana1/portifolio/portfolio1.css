@@ -1,3 +1,85 @@
-.background-portfolio1{
-    background-color: aqua;
+/*  header, Menu(navegação) */
+
+*{
+    margin: 0;
+    padding: 0;
 }
+
+.header-home{
+    background-color: rgb(241, 158, 158);
+    width: 100%;
+    height: 3rem;
+}
+
+.header-home > p{
+    justify-content: flex-start;
+    display: inline-block;
+    margin: 0 10rem;
+    letter-spacing: 1rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding-top: 8px;
+}
+
+.bar{
+    display: flex;
+    flex-direction: row;
+    display: inline-block;
+    padding-top: 0.8rem;
+}
+
+.bar > a{
+    letter-spacing: 0.2rem;
+    margin: 0 1rem;
+    line-height: 0;
+    font-size: 1rem;
+    padding: 1rem;
+    text-decoration: none;
+    color: #000000;
+
+}
+
+.bar a:hover{
+    background-color: rgb(223, 197, 197);;
+    cursor: pointer;
+}
+
+a:active{
+    background-color: tomato;
+}
+
+/* Background portfolio1 */
+
+.background-portfolio1{
+    height: 235vh;
+
+}
+
+.container-portfolio1{
+    padding: 3rem;
+    background-image: linear-gradient(to bottom, #b66, #eecece);
+
+    height: 235vh;
+}
+
+table img{
+    width: 580px;
+    height: 400px;
+}
+
+
+.container-portfolio1 tr td p a{
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.container-portfolio1  table tr td h6 {
+    font-size: 1.3em;
+    margin-left: 1rem ;
+    font-family: 'Josefin Sans', sans-serif;;
+}
+
