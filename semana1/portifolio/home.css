@@ -1,0 +1,285 @@
+/*  header, Menu(navegação) */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header-home{
+    background-color: rgb(241, 158, 158);
+    width: 100%;
+    height: 3rem;
+}
+
+.header-home > p{
+    justify-content: flex-start;
+    display: inline-block;
+    margin: 0 10rem;
+    letter-spacing: 1rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding-top: 8px;
+}
+
+.bar{
+    display: flex;
+    flex-direction: row;
+    display: inline-block;
+    padding-top: 0.8rem;
+}
+
+.bar > a{
+    letter-spacing: 0.2rem;
+    margin: 0 1rem;
+    line-height: 0;
+    font-size: 1rem;
+    padding: 1rem;
+    text-decoration: none;
+    color: #000000;
+
+}
+
+.bar a:hover{
+    background-color: rgb(223, 197, 197);;
+    cursor: pointer;
+}
+
+a:active{
+    background-color: tomato;
+}
+
+/*   Começando o corpo, background home */
+
+.background-home{
+    background-image: url(./img/background-home.jpg);
+    height: 100vh;
+ }
+
+.container-home{
+    width: 50%;
+    height: 50%;
+    transform: translate(50%, 50%);
+    border-radius: 3rem;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.container-home  h3{
+    position: absolute;
+    margin: 0;
+    margin-right: -50%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center ;
+    font-family: 'Josefin Sans', sans-serif;    
+    color: rgb(241, 158, 158);
+    font-size: 2rem;
+}
+
+
+.button-home{
+    position: absolute;
+    width: 7rem;
+    height: 1.8rem;
+    top: 65%;
+    left: 42%;
+    border: none;
+    border-radius: 0.8rem;   
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    color: #000000;
+    background-color:  rgba(255, 255, 255, 0.6) ;
+    font-weight: bold;
+}
+
+.button-home:hover{
+    background-color: rgba(211, 211, 211, 0.4);
+    cursor: pointer;
+}
+
+
+/* Background About/ Sobre mim */
+.background-about{
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    padding-bottom: 1rem;
+    margin-top: 300px;
+
+}
+
+.container-about{
+    width: 95%;
+    height: 95%;
+    transform: translate(2.5%, 2.5%);
+    background-color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+p{
+    padding-top: 1rem;
+    font-weight: bold;
+    font-size: 1.4rem;
+    font-family: 'Josefin Sans', sans-serif;
+    color: rgba(65, 65, 65, 0.7);
+}
+
+h4{
+    letter-spacing: 0.01rem;
+    font-size: 1.1rem;
+    color: grey;
+    
+}
+
+.container-about img{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    width: 80%;
+    border-radius: 100%;
+}
+
+.about-1{
+    float:left;
+    width:300px;
+    height: 100%;
+}
+
+.about-2{
+    display: inline-block;
+    margin:0 auto;
+    width:300px;
+    height: 100%;
+}
+
+.about-3{
+    float:right;
+    width:300px;
+    height: 100%;
+}
+
+/*       Background Portfólio  */
+
+.background-portfolio{
+    height: 100vh;
+    background-color: rgb(238, 206, 206);
+    margin-top: 3rem;
+}
+
+.header-portfolio{
+    width: 100%;
+    height: 5rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 1.2rem;
+}
+
+.header-portfolio p{
+    padding-top: 1rem;
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;;
+    color: rgb(255, 255, 255);
+    margin-left: 10rem;
+}
+
+.container-tabela-portfolio{
+    padding-left: 4rem;
+}
+
+table img{
+    width: 450px;
+    height: 280px;
+}
+
+
+.container-tabela-portfolio table tr td p a {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.container-tabela-portfolio  table tr td h6 {
+    font-size: 1.5rem;
+    margin-left: 1rem ;
+    font-family: 'Josefin Sans', sans-serif;;
+}
+
+/* Background form/ formulario para contato */
+
+.background-form{
+    height: 40vh;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    padding-bottom: 2rem;
+    border-top: double rgb(158, 158, 158);
+
+}
+
+.container-form{
+    width: 50%;
+    height: 70%;
+    transform: translate(50%, 30%);
+    border-radius: 3rem;
+    background-color: #eecece;
+    border: dotted  #b66464;
+    
+}
+
+#email{
+    position: absolute;
+    margin: 0;
+    margin-right: -50%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center ;
+    font-family: 'Josefin Sans', sans-serif;    
+    color: rgb(241, 158, 158);
+    font-size: 2rem;
+    border-radius: 3rem;
+    border: none;
+}
+
+.container-form h3{
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 1.5rem ;
+    color: #8f8f8f;
+}
+.button-form{
+    position: absolute;
+    width: 10rem;
+    height: 2.3rem;
+    top: 65%;
+    left: 38%;
+    border: none;
+    border-radius: 0.8rem;   
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    color: #000000;
+    background-color:  rgba(255, 255, 255, 0.6) ;
+    font-weight: bold;
+
+}
+
+.button-form:hover{
+    background-color: rgba(211, 211, 211, 0.4);
+    cursor: pointer;
+}
+
+.rede-social{
+    background-color: rgb(214, 196, 196, 0.4);
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.rede-social img{
+    width: 30px;
+    height: 30px;
+}
+
