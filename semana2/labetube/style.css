@@ -4,36 +4,56 @@
 }
 
 header{
+    background-color: #313131;
     display: flex;
-    background-color: orange;
+    height: 48px;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    height: 80px;
-    padding: 0 20px;
-    font-size: 20px;
-    letter-spacing: 2px;
 }
 
-input{
-    height: 40px;
-    width: 120px;
-    border: 0;
-    margin-right: 40px;
-    padding-left: 10px;
-}
-
-
-footer {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    background: grey;
-    height: 80px;
+.icone-texto{
     display: flex;
     align-items: center;
-   }
-   
-   #footer-container {
-       display: flex;
-       justify-content: end;
-   }
+    justify-content: center;
+    width: auto;
+    font-size: 15px;
+    padding-left: 18px;
+}
+
+.logo-labetube{width: 40px;}
+
+.input-search{
+    display: flex;
+    width: 500px;
+    height: 28px;
+    font-size: 15px;
+    padding-left: 8px;
+    background-color: #000000;
+    border: solid 0.5px #373737;
+}
+
+.container-input{display: flex;}
+
+.input-search-icone{
+    width: 32px;
+    height: 27px;
+    padding: 1px;
+    padding-top: 4px;
+    background-color: #373737;
+}
+
+
+.icones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    padding-right: 16px;
+}
+
+.icones img{
+    width: 32px;
+    margin: 0 16px;
+}
+
+img:hover{cursor: pointer;}
