@@ -4,7 +4,7 @@
 }
 
 header{
-    background-color: #313131;
+    background-color: #292828;
     display: flex;
     height: 48px;
     align-items: center;
@@ -21,6 +21,7 @@ header{
 }
 
 .logo-labetube{width: 40px;}
+.icone-texto h2:hover{cursor: pointer;}
 
 .input-search{
     display: flex;
@@ -30,15 +31,19 @@ header{
     padding-left: 8px;
     background-color: #000000;
     border: solid 0.5px #373737;
+
+}
+
+.input-search:focus{
+    outline: none !important;
+    border:1px solid rgb(101, 152, 220);
 }
 
 .container-input{display: flex;}
 
 .input-search-icone{
-    width: 32px;
-    height: 27px;
-    padding: 1px;
-    padding-top: 4px;
+    width: 20px;
+    padding: 1px 20px ;
     background-color: #373737;
 }
 
@@ -57,3 +62,40 @@ header{
 }
 
 img:hover{cursor: pointer;}
+
+nav{
+    width: 232px;
+    height: 100vh;
+    background-color: #292828;
+    display: flex;
+    flex-direction: column;
+}
+
+.button-icone{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-top: 12px;
+    
+}
+
+.button-icone img{width: 32px; padding: 5px 10px 5px}
+.button-icone p{display: flex; margin-left: 10px;}
+.button-icone:hover{background-color: red; margin: 0; cursor: pointer;}
+.nav:hover{background-color: red; padding: 0;}
+
+.barra{
+    width: 210px;
+    height: 1px;
+    background-color: #484444;
+    margin: 20px 0px
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: #292828;
+    color: #686666;
+}
