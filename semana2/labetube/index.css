@@ -1,6 +1,8 @@
 *{
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    color: inherit;
 }
 
 body{
@@ -23,6 +25,7 @@ header{
     font-size: 14px;
     padding-left: 30px;
     color: white;
+
 }
 
 .logo-labetube{width: 30px; padding-right: 4px;}
