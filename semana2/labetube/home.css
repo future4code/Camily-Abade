@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 48px 1fr 40px ;
+    grid-template-columns: 232px 1fr;
+    background-color: #181919;
+}
+
+header{
+    background-color: #202021;
+    display: flex;
+    height: 48px;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: 1/-1;
+}
+
+.icone-texto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    font-size: 14px;
+    padding-left: 30px;
+    color: white;
+}
+
+.logo-labetube{width: 30px; padding-right: 4px;}
+.icone-texto h2:hover{cursor: pointer;}
+
+.input-search{
+    display: flex;
+    width: 500px;
+    height: 28px;
+    font-size: 15px;
+    padding-left: 8px;
+    background-color: #181919;
+    border: solid 0.5px #373737;
+
+}
+
+.input-search:focus{
+    outline: none !important;
+    border:1px solid rgb(101, 152, 220);
+}
+
+.container-input{display: flex;}
+
+.input-search-icone{
+    width: 28px;
+    height: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #373737;
+}
+
+
+.icones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    padding-right: 16px;
+}
+
+.icones img{
+    width: 23px;
+    margin: 0 16px;
+}
+
+img:hover{cursor: pointer;}
+
+
+/* Navegação */
+
+nav{
+    width: 232px;
+    background-color: #202021;
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/2;
+    color: white;
+    padding-top: 12px;
+}
+
+
+.button-icone{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-top: 12px;
+    padding-left: 30px;
+    padding-bottom: 12px;
+}
+
+.button-icone img{width: 23px;}
+.button-icone:nth-child(1){background-color: red;}
+.button-icone:hover{background-color: rgb(112, 112, 112); margin: 0; cursor: pointer;}
+
+
+    
+
+/* Conteúdo */
+
+main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 70px;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+.button-icone p{display: flex; margin-left: 10px;}
+.nav:hover{background-color: red; padding: 0;}
+
+.barra{
+    width: 210px;
+    height: 1px;
+    background-color: #484444;
+    margin: 20px 0px
+}
+
+
+
+main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 10px;
+}
+
+
+
+main video{
+    height: 150px;
+    width: 200px;
+    
+}
+
+.container-cards-videos{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px ;
+}
+
+.container-cards-videos video{
+    width: 100%;
+    cursor: pointer;
+}
+
+.container-cards-videos p{
+    color: #686666;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container-cards-videos h4{
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+/* Rodapé */
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: #202021;
+    color: #686666;
+    grid-column: 1/-1;
+}
+
