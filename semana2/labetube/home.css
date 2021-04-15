@@ -25,11 +25,12 @@ header{
     align-items: center;
     justify-content: center;
     width: auto;
-    font-size: 18px;
+    font-size: 14px;
     padding-left: 30px;
+    color: white;
 }
 
-.logo-labetube{width: 40px;}
+.logo-labetube{width: 30px; padding-right: 4px;}
 .icone-texto h2:hover{cursor: pointer;}
 
 .input-search{
@@ -51,8 +52,10 @@ header{
 .container-input{display: flex;}
 
 .input-search-icone{
-    width: 20px;
-    padding: 1px 20px ;
+    width: 28px;
+    height: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
     background-color: #373737;
 }
 
@@ -66,7 +69,7 @@ header{
 }
 
 .icones img{
-    width: 32px;
+    width: 23px;
     margin: 0 16px;
 }
 
@@ -81,7 +84,10 @@ nav{
     display: flex;
     flex-direction: column;
     grid-column: 1/2;
+    color: white;
+    padding-top: 12px;
 }
+
 
 .button-icone{
     display: flex;
@@ -92,9 +98,11 @@ nav{
     padding-bottom: 12px;
 }
 
-.button-icone img{
-    width: 32px;
-}
+.button-icone img{width: 23px;}
+.button-icone:nth-child(1){background-color: red;}
+.button-icone:hover{background-color: rgb(112, 112, 112); margin: 0; cursor: pointer;}
+
+
     
 
 /* Conteúdo */
@@ -107,7 +115,6 @@ main{
     column-gap: 20px;
 }
 .button-icone p{display: flex; margin-left: 10px;}
-.button-icone:hover{background-color: red; margin: 0; cursor: pointer;}
 .nav:hover{background-color: red; padding: 0;}
 
 .barra{
@@ -141,11 +148,13 @@ main video{
 
 .container-cards-videos video{
     width: 100%;
+    cursor: pointer;
 }
 
 .container-cards-videos p{
     color: #686666;
     align-items: center;
+    cursor: pointer;
 }
 
 .container-cards-videos h4{
@@ -153,6 +162,8 @@ main video{
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
+    padding: 5px;
+    cursor: pointer;
 }
 
 
