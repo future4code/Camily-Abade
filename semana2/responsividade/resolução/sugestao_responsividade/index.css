@@ -1,0 +1,21 @@
+.container {
+    width: 1000px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.item {
+    border: 1px solid black;
+}
+
+.containerzinho {
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.itemzinho {
+    border: 1px solid black;
+}
