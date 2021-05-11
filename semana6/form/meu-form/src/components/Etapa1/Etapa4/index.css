@@ -1,0 +1,32 @@
+
+.containerTudo{
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+h1{
+  font-size: 3.2rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+p{
+  color:white;
+}
+
+.containerInput{
+  width: 60vw;
+  border: 1px solid rgb(255, 255, 255);
+  padding: 5rem;
+  
+
+}
+

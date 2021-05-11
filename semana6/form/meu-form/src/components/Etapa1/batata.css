@@ -1,0 +1,58 @@
+
+.containerTudo{
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(to bottom, white, purple);
+}
+
+h1{
+  font-size: 2rem;
+  color: rgb(56, 14, 80);
+}
+
+.containerInput{
+  width: 60vw;
+  border: 2px solid black;
+  padding: 5rem;
+
+}
+
+input{
+  width: 35vw;
+  height: 4vh;
+  border-radius: 1rem;
+  border: 0 none;
+  padding-left: 5rem;
+  outline: 0;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+::-webkit-input-placeholder{
+  color: rgb(105, 106, 107);
+}
+
+select{
+  width: 20vw;
+  height: 4vh;
+  border: 0;
+  margin-bottom: 1rem;
+  background-color: rgb(255, 255, 255);
+}
+
+button{
+  width: 15vw;
+  height: 4vh;
+  border-radius: 1rem;
+  border: 0 none;
+  padding-left: 1rem;
+  outline: 0;
+  font-size: 0.8rem;
+
+}
