@@ -9,11 +9,12 @@ const TarefaList = styled.ul`
 
 const Tarefa = styled.li`
   text-align: left;
+  margin-left: 0.01rem;
   text-decoration: ${({completa}) => (completa ? 'line-through' : 'none')};
 `
 
 const InputsContainer = styled.div`
-  display: grid;
+  display: flex;
   grid-auto-flow: column;
   gap: 10px;
 `
@@ -21,17 +22,20 @@ const InputsContainer = styled.div`
 class App extends React.Component {
     state = {
       tarefas: [{id: Date.now(), texto: 'primeira tarefa', completa: false}],
-
       inputValue: '',
       filtro: ''
     }
-
+    
   componentDidUpdate() {
     localStorage.setItem('texto', this.state.inputValue)
+    localStorage.setItem('tarefas', JSON.stringify(this.state.tarefas))
   };
 
   componentDidMount() {
-
+    const texto = localStorage.getItem('texto')
+    const tarefas = JSON.parse(localStorage.getItem('tarefas'))
+    this.setState({inputValue: texto})
+    this.setState({tarefas: tarefas})
   };
 
   onChangeInput = (event) => {
@@ -43,9 +47,8 @@ class App extends React.Component {
     const novaTarefa = {id: Date.now(), texto: this.state.inputValue, completa: false }
     const copiaDoEstado = [...this.state.tarefas]
     copiaDoEstado.push(novaTarefa)
-    console.log(copiaDoEstado)
-    this.setState({tarefas: copiaDoEstado})
-
+    this.setState({tarefas: copiaDoEstado})    
+    this.state.inputValue = '';
   }
 
   selectTarefa = (id) => {
@@ -83,33 +86,36 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <h1>Lista de tarefas</h1>
-        <InputsContainer>
-          <input value={this.state.inputValue} onChange={this.onChangeInput}/>
-          <button onClick={this.criaTarefa}>Adicionar</button>
-        </InputsContainer>
-        <br/>
+        <div className='container'>
+          <h1>Lista de tarefas</h1>
+          <InputsContainer>
+            <input placeholder='Adicione sua tarefa...' value={this.state.inputValue} onChange={this.onChangeInput}/>
+            <button onClick={this.criaTarefa}>Adicionar</button>
+          </InputsContainer>
+          <br/>
 
-        <InputsContainer>
-          <label>Filtro</label>
-          <select value={this.state.filter} onChange={this.onChangeFilter}>
-            <option value="">Nenhum</option>
-            <option value="pendentes">Pendentes</option>
-            <option value="completas">Completas</option>
-          </select>
-        </InputsContainer>
-        <TarefaList>
-          {listaFiltrada.map(tarefa => {
-            return (
-              <Tarefa
-                completa={tarefa.completa}
-                onClick={() => this.selectTarefa(tarefa.id)}
-              >
-                {tarefa.texto}
-              </Tarefa>
-            )
-          })}
-        </TarefaList>
+          <InputsContainer>
+            <label>Filtro</label>
+            <select value={this.state.filter} onChange={this.onChangeFilter}>
+              <option value="">Nenhum</option>
+              <option value="pendentes">Pendentes</option>
+              <option value="completas">Completas</option>
+            </select>
+          </InputsContainer>
+          
+          <TarefaList>
+            {listaFiltrada.map(tarefa => {
+              return (
+                <Tarefa
+                  completa={tarefa.completa}
+                  onClick={() => this.selectTarefa(tarefa.id)}
+                >
+                  {tarefa.texto}
+                </Tarefa>
+              )
+            })}
+          </TarefaList>
+        </div>
       </div>
     )
   }
