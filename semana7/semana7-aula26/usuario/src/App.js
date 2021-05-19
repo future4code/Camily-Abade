@@ -115,7 +115,7 @@ export default class App extends React.Component {
           <button onClick={this.createUsers}>Criar</button>
         </div>)}
         {troca && (<div>
-          <h2>Listinha Nova de Usuários</h2>
+          <h2>Listinha Nova de Usuárioss</h2>
           {listaUsuario}
         </div>)}
 
