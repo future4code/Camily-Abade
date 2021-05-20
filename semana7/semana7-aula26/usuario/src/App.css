@@ -1,5 +1,124 @@
 .container{
+  width: 100vw;
+  height: 100vh;
+  background-color: bisque;
+}
+
+/*Header */
+
+.menu{
+  width: 100vw;
+  background-color: #CABAAB;
   display: flex;
   justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+/* P e H depois do header */
+
+
+.containerP{
+  text-align: left;
+  width: 30vw;
+  height: 15vh;
+  margin-bottom: 4vh;
+}
+
+.containerPagina1{
+  display: flex;
+  justify-content: center;
+}
+
+
+.h1yellow{color: #5a7b85; font-weight: bold;}
+.h1red{color: #34455c; font-weight: bold;}
+.p1{color: rgb(49, 39, 39); font-size: 1.4rem;}
+.p2{color: rgb(49, 39, 39); font-size: 1rem ;}
+
+/* Inputs */
+
+
+.containerInput{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: column;
+}
+
+input{
+  width: 30vw;
+  height: 8vh;
+  border: none;
+  color: black;
+  opacity: 0.7;
+  font-size: 1rem;
+  margin-bottom: 2vh;
+  padding-left: 1vw;
+}
+
+/* Botões */
+
+.containerButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.criarUsuario, .vizualizarPagina, .criarNovoUsuario{
+  background-color: rgb(221, 205, 187);
+  width: 14vw;
+  height: 4vh;
+  border: none;
+  cursor: pointer;
+  margin-left: 1vh;
+  border-radius: 1vw;
+}
+
+
+/* Segunda Página */
+
+.segundaPagina{
+  height: auto;
+  margin: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.1vw solid rgb(44, 42, 42) ;
+}
+
+
+.containerDeletar{
+  display: flex;
+  justify-content: space-between;
+  width: 20vw;
+  border:  0.1vw solid gray;
+  padding: 4vh;
+  margin: 1vw;
+
+}
+
+.botaoDeletar{
+  background-color: rgb(87, 88, 85);
+  border: none;
+  border-radius: 100vw;  
+}
+
+button{
+  cursor: pointer;
+}
+
+button:hover{background-color: rgb(78, 71, 62);}
+
+/* Rodapé */
+
+
+footer{
+  position: absolute;
+	bottom: 0;
+  width: 100vw;
   text-align: center;
+  font-size: 1rem;
+  color: #dfd4ca;
+  background-color: rgb(37, 36, 36);
 }

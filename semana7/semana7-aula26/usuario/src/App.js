@@ -12,6 +12,11 @@ export default class App extends React.Component {
     this.getUsers();
   }
 
+  componentDidUpdate() {
+    this.getUsers();
+
+  }
+
   state = {
     inputName: "",
     inputEmail: "",
@@ -42,6 +47,10 @@ export default class App extends React.Component {
     axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users`, body, header)
     .then (() => {
       alert('Usuário criado com sucesso!!')
+
+      this.setState({inputName:'', inputEmail: ''});      
+    
+
     })
 
     .catch((err) => {
@@ -63,12 +72,13 @@ export default class App extends React.Component {
     })
 
     .catch((err) => {
-      alert('ERROR AQUIIIIII')
+      alert('Não Foi possível criar o usuário', err)
     }) 
   }
 
 
   deletar = (id) => {
+
     const header = {
       headers: {
         Authorization: "camily-abade-paiva"
@@ -83,7 +93,6 @@ export default class App extends React.Component {
     .catch((err) => {
       alert('ERROR PARA DELETAR')
     })
-    this.getUsers()
   }
 
   trocaPagina = () => {
@@ -94,9 +103,9 @@ export default class App extends React.Component {
   render () {
     const listaUsuario = this.state.listaUsuario.map((usuario) => {
       return (
-        <div>
+        <div className='containerDeletar'>
           <li>{usuario.name}</li>
-          <button onClick={() => this.deletar(usuario.id)}>X</button>
+          <button className='botaoDeletar' onClick={() => this.deletar(usuario.id)}>X</button>
         </div>  
       )
     })
@@ -104,20 +113,47 @@ export default class App extends React.Component {
     return (
 
       <div className='container'>
-        <div>
-          <h1>Labenusers</h1>
-          <button onClick={this.trocaPagina}>Trocar de página</button>
+        <div className='menu'>
+          <h1 className='h1yellow'>Laben</h1>
+          <h1 className='h1red'>Users</h1>
         </div>
+
+  
+          
         {!troca && (<div>
-          <h2>Criar Usuário</h2>
-          <input value={this.state.inputName} onChange={this.handleName} placeholder='Nome'></input>
-          <input value={this.state.inputEmail} onChange={this.handleEmail} placeholder='E-mail'></input>
-          <button onClick={this.createUsers}>Criar</button>
+
+          <div className='containerPagina1'>
+          <div className='containerP'>
+            <p className='p1'>Crie o seu usário</p>
+            <p className='p2'>Informe seus dados abaixo para criar um usuário</p>
+          </div>
+        </div>
+
+
+          <div className='containerInput'>
+            <input value={this.state.inputName} onChange={this.handleName} placeholder='Nome'></input>
+            <input value={this.state.inputEmail} onChange={this.handleEmail} placeholder='E-mail'></input>
+          </div>
+         
+         <div className='containerButton'>
+         <button className='criarUsuario' onClick={this.createUsers}>Criar</button>
+        <button  className='vizualizarPagina' onClick={this.trocaPagina}>Vizualizar Usuários</button>
+         </div>
+
         </div>)}
-        {troca && (<div>
-          <h2>Listinha Nova de Usuárioss</h2>
-          {listaUsuario}
+
+        
+        
+
+        {troca && (<div className='segundaPagina'>
+            <h2>Usuários Criados</h2>
+            {listaUsuario}
+            <button  className='criarNovoUsuario' onClick={this.trocaPagina}>Criar Novo Usuário</button>
         </div>)}
+
+        <footer>
+          <p>Linkedin: Camily Abade</p>
+        </footer>
 
       </div>
     );
