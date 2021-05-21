@@ -17,7 +17,6 @@ export default class App extends React.Component {
       console.log(err)
     })
 
-    
     const options = {
       method: 'GET',
       url: 'https://translated-mymemory---translation-memory.p.rapidapi.com/api/get',
@@ -33,11 +32,11 @@ export default class App extends React.Component {
       }
     };
     
-    axios.request(options).then(function (response) {
+    axios.request(options).then(function(response){
       console.log(response.data.responseData);
       this.setState({activity: response.data.responseData})
       
-    }).catch(function (error) {
+    }).catch((error) => {
       console.error(error);
     });
   }
@@ -57,10 +56,9 @@ export default class App extends React.Component {
           <h3>Atividade Pra vc!</h3>
           <p>Nome: {activity}</p>
           <p>Tipo: {type}</p>
-        </div>
+__      </div>
 
         <footer>@Camily Abade</footer>
-
       </div>
     )
   }
