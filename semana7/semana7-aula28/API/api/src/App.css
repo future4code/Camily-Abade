@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  background-color: #EEF5DB;
 }
 
-.App-link {
-  color: #61dafb;
+.containerMenu{
+  background-color: #BFB48F;
+  width: 100vw;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1{color: #252627;}
+button{
+  width: 10vw;
+  cursor: pointer;
+  margin-bottom: 1vh;
+  border: none;
+}
+button:hover{
+  background-color: rgb(168, 168, 168);
+}
+
+
+.containerPostIt{
+  margin-top: 2vh;
+  font-size:22px;      
+  line-height: 1;
+  text-align:left;     
+  width: 26vw;    
+  border:1px solid #E8E8E8;  
+  border-top:60px solid #fdfd86;
+  font-family:'Reenie Beanie';    
+  border-bottom-right-radius: 60px 5px;
+
+  display:inline-block;    
+  background: #ffff88; /* Old browsers */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#ffff88), color-stop(82%,#ffff88), color-stop(82%,#ffff88), color-stop(100%,#ffffc6)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
+
+}
+
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  background-color: #FE5F55;
+  color: #F2EFE9;
 }
