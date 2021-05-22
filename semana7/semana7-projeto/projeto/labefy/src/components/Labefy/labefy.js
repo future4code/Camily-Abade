@@ -1,8 +1,14 @@
+import axios from 'axios';
 import React from 'react'; 
 import './labefy.css'; 
 
 class Labefy extends React.Component { 
   
+  criaPlayList() => {
+    axios.post
+  }
+
+
   
   render(){ 
     return ( 
@@ -13,8 +19,8 @@ class Labefy extends React.Component {
           <div className='logo'><h1>Monky</h1></div>
           
           <nav className='nav'>
-              <p className='p'>Buscar</p>
-              <p className='p'>PlayLisyt</p>
+              <input className='input' placeholder='Buscar...' input/>
+              <p className='p'onClick={criaPlayList}>PlayLisyt</p>
           </nav>
           
           <nav className='sair'>
@@ -24,8 +30,8 @@ class Labefy extends React.Component {
 
         <div className='containernhe'>
           <div className='navMenu'>
-            <a class="block" class="flash-me" >Minhas Músicas</a>
-            <a class="block" class="flash-me" >Minhas Playlist</a>
+            <a class="block" >Minhas Músicas</a>
+            <a class="block" >Minhas Playlist</a>
           </div>
 
           <div className='oie'>

@@ -30,13 +30,15 @@ class App extends React.Component {
       }else if (this.state.pagina === 'labefy'){
         return  <Labefy/>
       }
-    }
+      }
+    
 
     return (
       <div>{atualizaPagina()}</div>
     )
   }
-}
 
-  export default App;
+}
+export default App;
+
 

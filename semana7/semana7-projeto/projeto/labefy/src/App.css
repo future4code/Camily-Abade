@@ -15,13 +15,35 @@
 }
 
 .containerImgLog{
-	width: 60vw;
-	height: 60vh;
-  box-shadow: rgba(255, 255, 255, 0.56) 0px 22px 70px 4px;
-  display: flex;
-  opacity: 0.8;
-  border: 2px solid #00ffd8;
+  width: 60vw;
+  height: 60vh;
+  box-shadow: rgba(255, 255, 255, 0.56) 0px 22px 70px 4px; 
+display: flex; 
+opacity: 0.8; 
+border: 2px solid #00ffd8;
 }
+
+.fa-blink{
+  width: 60vw;
+  height: 60vh;
+  border: 2px solid #00ffd8;
+  box-shadow: rgba(255, 255, 255, 0.56) 0px 22px 70px 4px;
+
+}
+
+
+@keyframes fa-blink {
+  0% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+.fa-blink {
+-webkit-animation: fa-blink .75s linear infinite;
+-moz-animation: fa-blink .75s linear infinite;
+-ms-animation: fa-blink .75s linear infinite;
+-o-animation: fa-blink .75s linear infinite;
+animation: fa-blink .75s linear infinite;
+}
+
 
 .img{
   width: 30vw;
@@ -37,7 +59,7 @@
   display: flex;
   flex-direction: column;
 
-}
+} 
 
 /*  INPUT DO LOGIN */
 
@@ -81,5 +103,7 @@ button:hover{
 img{
   width: 30vw;
   height: 60vh;
+
+
 }
 

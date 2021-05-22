@@ -38,6 +38,14 @@ p{
   cursor: pointer;
   padding: 1vh 5vw;
   font-family: 'Audiowide', cursive;  
+}
+ 
+.input{
+  width: 16vw;
+  background-color: #000;
+  color: gray;
+  border-bottom: 1px solid gray;
+  border-radius: none;
 
 }
 
@@ -76,50 +84,18 @@ a:hover{
   background-color: blueviolet;
 }
 
-/*  Playlist da tela */
 
-audio{
-  width: 100vw;
+.block{ 
+  color: white;
+  text-shadow: rgb(160, 13, 13) 0.3vh 0.3vw 0.2px;
+
 }
+
+/*  Playlist da tela */
 
 .oie{
   background-image: linear-gradient(to right, white, purple, yellow);
 
   width: 100vw;
   height: 88vh;
-}
-
-
-.block{
-  display:inline-block;
-  padding:30px 50px;
-  background:#000;
-}
-.flash-me {
-  color:#fff;
-  -webkit-animation: flash linear 1.7s infinite;
-  animation: flash linear 2s infinite;
-  text-shadow: rgb(160, 13, 13) 0.3vh 0.3vw 0.2px;
-
-
-} 
-@-webkit-keyframes flash {
-  0% { opacity: 0; } 
-  80% { opacity: 1; color:#fff; } 
-  83% { opacity: 0; color:#fff; } 
-  86% { opacity: 1; color:#fff;}	
-  89% { opacity: 0} 
-  92% { opacity: 1; color:#fff;} 
-  95% { opacity: 0; color:#fff;}
-  100% { opacity: 1; color:#fff;}
-}
-@keyframes flash {
-  0% { opacity: 0; } 
-  80% { opacity: 1; color:#fff; } 
-  83% { opacity: 0; color:#fff; } 
-  86% { opacity: 1; color:#fff;}	
-  89% { opacity: 0} 
-  92% { opacity: 1; color:#fff;} 
-  95% { opacity: 0; color:#fff;}
-  100% { opacity: 1; color:#fff;}
 }
