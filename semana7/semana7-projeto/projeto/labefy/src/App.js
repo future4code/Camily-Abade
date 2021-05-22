@@ -1,33 +1,42 @@
 import "./App.css";
 import React from "react";
-import gorilaLogIn from "./imagens/gorilaLogIn.jpg";
+import Labefy from "./components/Labefy/labefy";
+import Login from "./components/Login/login";
 
-export default class App extends React.Component {
+
+class App extends React.Component {
+  
+  state = {
+    pagina: 'login'
+  }
+  
+  login = (nome, apelido) => {
+    if (nome !== '' ){
+      if (this.state.pagina === 'login' ) {
+        this.setState({pagina: 'labefy' })
+      }
+    }else{
+      alert('Por favor infrome o seu nome')
+    }
+  }
+
+  
   render() {
-    return (
-      <div className="containerBody">
-        <main>
-          <div className="containerImgLog">
-            <div className="img">
-              <img src="gorilaLogIng.jpg" />
-            </div>
 
-            <div className="containerLog">
-              <div className="logIn">
-                <h2>Vai uma musiquinha aí??</h2>
-              </div>
-              <div className="Containerinput">
-                <input placeholder='Nome'/>
-                <input placeholder='Senha'/>
-              </div>
-              <div className="logIn">
-                <p>Faça o seu LogIn</p>
-                <button>LogIn</button>
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
-    );
+    const atualizaPagina = () => {
+
+      if (this.state.pagina === 'login'){
+        return <Login login = {this.login}/>
+      }else if (this.state.pagina === 'labefy'){
+        return  <Labefy/>
+      }
+    }
+
+    return (
+      <div>{atualizaPagina()}</div>
+    )
   }
 }
+
+  export default App;
+
