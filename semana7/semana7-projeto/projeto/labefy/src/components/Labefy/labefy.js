@@ -7,7 +7,9 @@ class Labefy extends React.Component {
   state = {
     inputNovaPlaylist: '',
     arrayDePlaylists: [],
-
+    arrayDeMusica: [],
+    ArraydeArtista: [],
+    urlMusica: '',
     inputName: '',
     inputArtist: '',
     inputUrl: '',
@@ -17,7 +19,7 @@ class Labefy extends React.Component {
 
   handleNovaPlaylist = (e) => {
     this.setState({inputNovaPlaylist: e.target.value})
-    console.log('oie, vc escreveu algo no input') // Tudo ok aqui
+    console.log('oie, vc escreveu algo no input')
   }
   header = {
     headers: {
@@ -41,20 +43,18 @@ class Labefy extends React.Component {
 
   }
 
-
-
-
   createPlaylist = () => {
     const body = {
       'name': this.state.inputNovaPlaylist
     }
     axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists`, body, this.header )
     .then(() => {
-      alert('PLAYLIST CRIADAAAAAAAAAAAAAAAAA, YAUUUUUUUUUUUUUUU')
+      alert('Sua nova playlist foi criada com sucesso!! Aguarde um instante ou veja ela em "Minhas Playlists"')
       this.setState({inputNovaPlaylist:""})
+      this.getPlaylists()
     })
     .catch((err) => {
-      alert('Erro para criar a playlist', err)
+      alert('Tente Novamente, você não pode criar playlist com mesmos nomes :(')
       this.setState({inputNovaPlaylist:""})
     })
   }
@@ -73,12 +73,12 @@ class Labefy extends React.Component {
   deletaPlaylist = (id) => {
     axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}`, this.header)
     .then((res) => {
-      alert(`A playlist foi deletada com sucesso`)
+      alert(`A sua playlist foi deletada com sucesso`)
       this.getPlaylists()
       console.log(res)
     })
     .catch((err) => {
-      alert(`Não foi possível deletar a playlist`)
+      alert(`Não foi possível deletar a playlist, tente novamente :)`)
     })
   }
 
@@ -87,33 +87,53 @@ class Labefy extends React.Component {
     console.log(this.header)
     axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}/tracks`, this.header)
     .then((res) => {
-    console.log(res.data.result)
+    this.setState({arrayDeMusica:res.data.result.tracks})
+    alert('Você clicou na sua playlist escolhida! 😉')
+
     })
     .catch(() => {
-      alert('ERROR ao pegar detalhes da playlist')
+      console.log('ERROR ao pegar detalhes da playlist')
     })
   }
 
   addTrackToPlaylist = () => {
     const body = {
-      
         "name": this.state.inputName, 
         "artist": this.state.inputArtist,
-        "url": `http://spoti4.future4.com.br/${this.state.inputUrl}.mp3`
-    
+        "url": this.state.inputUrl
     }
-    console.log(this.state.playlistSelecionada)
-    console.log(body)
-    console.log(this.header)
-    axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${this.state.playlistSelecionada}/tracks`, this.header, body)
+   
+    axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${this.state.playlistSelecionada}/tracks`, body, this.header)
     .then(() => {
-      alert('A MUSICA FOI ADD!!!')
+      alert('Sua música foi adicionada com sucesso!! Para ver ela clique na playlist adicionada')
+      this.setState({inputUrl: '', inputName: '', inputArtist: ''})
+
     })
     .catch((err) => {
       console.log(err)
-      alert('deu erro para add a musica!')
+      alert('deu erro para adicionar sua a musica!, tente novamente :)')
     })
   }
+
+  tocaMusica = (e) => {
+    this.setState({urlMusica: e})
+  }
+
+  removeTrackFromPlaylist = (id, url) => {
+    axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${this.state.playlistSelecionada}/tracks/${id}`, this.header)
+    .then(() => {
+      alert('A sua música foi deletada com sucesso!')
+      this.getPlaylistTracks(this.state.playlistSelecionada)
+      if (url === this.state.urlMusica){
+        this.setState({urlMusica: ''})
+      }
+    })
+    .catch(() => {
+      console.log('não foi possível deletar sua música')
+
+    })
+  }
+
 
 
   render(){
@@ -124,39 +144,63 @@ class Labefy extends React.Component {
           <p onClick={() => this.getPlaylistTracks(playlist.id)}>{playlist.name}</p>
           <button className='buttonDelete' onClick={() => this.deletaPlaylist(playlist.id)}>X</button>
         </div>
-        
       )
-    })    
+    }) 
+
+    const mapArraydeMusica = this.state.arrayDeMusica.map((musicas) => {
+      return (
+        <div className='containerListaDeMusica'>
+          <p className='nameMusica'>{musicas.name}</p>
+          <p className='nameMusica'>{musicas.artist}</p>
+          <button onClick={() => this.removeTrackFromPlaylist(musicas.id, musicas.url)}>x</button>
+          <button onClick={() => this.tocaMusica(musicas.url)}>Play</button>
+        </div>
+      )
+    })
+
 
 
     return ( 
       <div className='container'>
+        
         <div className='containerNav'>
           <div className='logo'><h1>Monky</h1></div>
-          
           <nav className='nav'>
-              <input className='input' placeholder='Buscar...' input/>
-              <input className='input' placeholder='Add sua nova PlayList' value={this.state.inputNovaPlaylist} onChange={this.handleNovaPlaylist}/>
-              <button  onClick={this.createPlaylist} >Criar!</button>
-              <hr/>
-
+              <p className='criarPlaylist'>Criar Playlist</p>
+              <input className='inputLabefy' placeholder='Nome da sua nova Playlist' value={this.state.inputNovaPlaylist} onChange={this.handleNovaPlaylist}/>
+              <button  className='boaoNav' onClick={this.createPlaylist} >Criar!</button>
+              <p className='AddMusica'>Add música</p>
               <input className='input' placeholder='Nome da música...' value={this.state.inputName} onChange={this.handleName} input/>
               <input className='input' placeholder='Artista' value={this.state.inputArtist} onChange={this.handleArtist} input/>
               <input className='input' placeholder='URL' value={this.state.inputUrl} onChange={this.handleUrl} input/>
-              <button onClick={this.addTrackToPlaylist}>Add música</button>
+              <button className='boaoNav' onClick={this.addTrackToPlaylist}>Add música</button>
+              <p className='observacao'>Antes de clicar no botão "Add música" clique na playlista que você deseja adicionar a música :)</p>
+
           </nav>          
-          <nav className='sair'>
-              <p className='p'>Sair</p>
-          </nav>
         </div>
         <div className='menu'>
           <div className='navMenu'>
-            <a class="block" >Minhas Músicas</a>
-            <a class="block" onClick={this.getPlaylists} >Minhas Playlist</a>
+            <h1 class="minhasPlaylist" onClick={this.getPlaylists} >Minhas Playlists</h1>
           </div>
 
           <div className='containerColorido'>
-            {mapArrayDePlaylist}
+            <div className='contianerPlaylist'>
+              {mapArrayDePlaylist}
+            </div>
+            
+
+            <div className='contianerPlaylist'>
+              <div className='containerMusica'>
+                <p>Música</p>
+                <p>Artista</p>
+                <p>Delete/Play</p>
+              </div>
+              <div>
+              {mapArraydeMusica}
+              </div>
+            </div>
+            
+            <audio src={this.state.urlMusica} controls autoPlay ></audio> 
 
 
           </div>
