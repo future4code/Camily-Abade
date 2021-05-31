@@ -1,4 +1,5 @@
 .container{
+<<<<<<< HEAD
   width: 100vw;
   height: 100vh;
   background-color: bisque;
@@ -122,3 +123,9 @@ footer{
   color: #dfd4ca;
   background-color: rgb(37, 36, 36);
 }
+=======
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+>>>>>>> master

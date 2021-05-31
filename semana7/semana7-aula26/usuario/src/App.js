@@ -12,11 +12,14 @@ export default class App extends React.Component {
     this.getUsers();
   }
 
+<<<<<<< HEAD
   componentDidUpdate() {
     this.getUsers();
 
   }
 
+=======
+>>>>>>> master
   state = {
     inputName: "",
     inputEmail: "",
@@ -47,10 +50,13 @@ export default class App extends React.Component {
     axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users`, body, header)
     .then (() => {
       alert('Usuário criado com sucesso!!')
+<<<<<<< HEAD
 
       this.setState({inputName:'', inputEmail: ''});      
     
 
+=======
+>>>>>>> master
     })
 
     .catch((err) => {
@@ -72,13 +78,20 @@ export default class App extends React.Component {
     })
 
     .catch((err) => {
+<<<<<<< HEAD
       alert('Não Foi possível criar o usuário', err)
+=======
+      alert('ERROR AQUIIIIII')
+>>>>>>> master
     }) 
   }
 
 
   deletar = (id) => {
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
     const header = {
       headers: {
         Authorization: "camily-abade-paiva"
@@ -93,6 +106,10 @@ export default class App extends React.Component {
     .catch((err) => {
       alert('ERROR PARA DELETAR')
     })
+<<<<<<< HEAD
+=======
+    this.getUsers()
+>>>>>>> master
   }
 
   trocaPagina = () => {
@@ -103,9 +120,15 @@ export default class App extends React.Component {
   render () {
     const listaUsuario = this.state.listaUsuario.map((usuario) => {
       return (
+<<<<<<< HEAD
         <div className='containerDeletar'>
           <li>{usuario.name}</li>
           <button className='botaoDeletar' onClick={() => this.deletar(usuario.id)}>X</button>
+=======
+        <div>
+          <li>{usuario.name}</li>
+          <button onClick={() => this.deletar(usuario.id)}>X</button>
+>>>>>>> master
         </div>  
       )
     })
@@ -113,6 +136,7 @@ export default class App extends React.Component {
     return (
 
       <div className='container'>
+<<<<<<< HEAD
         <div className='menu'>
           <h1 className='h1yellow'>Laben</h1>
           <h1 className='h1red'>Users</h1>
@@ -155,6 +179,23 @@ export default class App extends React.Component {
           <p>Linkedin: Camily Abade</p>
         </footer>
 
+=======
+        <div>
+          <h1>Labenusers</h1>
+          <button onClick={this.trocaPagina}>Trocar de página</button>
+        </div>
+        {!troca && (<div>
+          <h2>Criar Usuário</h2>
+          <input value={this.state.inputName} onChange={this.handleName} placeholder='Nome'></input>
+          <input value={this.state.inputEmail} onChange={this.handleEmail} placeholder='E-mail'></input>
+          <button onClick={this.createUsers}>Criar</button>
+        </div>)}
+        {troca && (<div>
+          <h2>Listinha Nova de Usuárioss</h2>
+          {listaUsuario}
+        </div>)}
+
+>>>>>>> master
       </div>
     );
   }
