@@ -4,7 +4,7 @@ import TelaDeMatch from '../TelaDeMatch/TelaDeMatch';
 import TelaInicial from '../TelaInicial/TelaInicial';
 import {Botoes, ExcluirMatch} from '../../Assets/botoes';
 import {link} from '../../Assets/links';
-
+import './container.css'
 
 
 function Container() {
@@ -35,11 +35,10 @@ function Container() {
 
 
   return (
-    <div>
-      <Botoes mudaPagina={mudaPagina} pagina={pagina}/>
+    <div className='container'>
       {pagina && <TelaInicial pessoa={pessoa} pegaPerfil={() => pegaPerfil()} />}
       {!pagina && <TelaDeMatch pessoa={pessoa}/>}
-      <ExcluirMatch mudaPagina={mudaPagina}/>
+      <Botoes mudaPagina={mudaPagina} pagina={pagina}/>
 
     </div>
   );

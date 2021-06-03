@@ -1,0 +1,8 @@
+.container{
+  width: 375px;
+  height: 80vh;
+  position: relative;
+  margin: 0;
+  box-sizing: border-box;
+  
+}
