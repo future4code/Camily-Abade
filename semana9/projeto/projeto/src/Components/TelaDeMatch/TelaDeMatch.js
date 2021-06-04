@@ -25,7 +25,7 @@ export default function TelaDeMatch (props) {
   return(
     <div className='oi'>
       
-      { listaMatch[0] ? (listaMatch.map(listaDeMatch => {
+      { listaMatch.length ? (listaMatch.map(listaDeMatch => {
         return(
           <div className="containerMatch">
             <img className="fotoPerfil" src={listaDeMatch.photo} alt='foto da pessoa'/>
