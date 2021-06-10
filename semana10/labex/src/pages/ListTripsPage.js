@@ -1,39 +1,28 @@
 import React from 'react';
 import {useHistory} from "react-router-dom";
-import '../App'
+import { goToPage } from '../routes/coordinator';
 import {Header, ContainerTotal, Background1, SubFrase, Viagens,} from './StyledAbout'
 
 
 
-export const About = (props) => {
+export const ListTripsPage = () => {
   const history = useHistory()
-  
-  const goToHome = () => {
-    history.push('/')
-  }
-
-  const goBack = () => {
-    history.goBack()
-  }
-
-  const goToDetalhesPage = () => {
-    history.push('/detalhes-viagem')
-  } 
 
   return( 
     <ContainerTotal>
     <Background1>
       <Header>
-        <h2>LabeX</h2>
+        <h2 onClick={history.goBack}>LabeX</h2>
       </Header>
       
       <SubFrase>
-        <Viagens onClick={goToDetalhesPage}>
+        <Viagens>
+          
           <p>oie</p>
           <p>nhenhe</p>
         
         </Viagens>  
-        <button onClick={props.GetTrip}>Teste Aqui!!</button>        
+        <button onClick={null}>Teste Aqui!!</button>        
       </SubFrase>
     </Background1>
 

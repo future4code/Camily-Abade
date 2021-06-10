@@ -1,40 +1,43 @@
 import React from 'react';
-import {useHistory} from "react-router-dom"
-import styled from 'styled-components';
+import {useHistory} from "react-router-dom";
+// import styled from 'styled-components';
+// import {ContainerTotal, LogIn, Img} from './StyledLoginPage'
+// import useForm from "../Hooks/UseForm";
+// import { BASE_URL } from "../Constants/urls";
+import {goToPage} from '../routes/coordinator'
 
-const ContainerTotal = styled.div `
-  width: 100%;
-  display: flex;
 
-`
-const LogIn = styled.div `
-  width: 50%;
 
-`
-const Video = styled.div `
-  width: 50%;
-  
 
-`
-
-export const Login = () => {
+export const LoginPage = () => {
   const history = useHistory()
   const goToAdm = () => {
-    history.push('/adm-viagens')
+    history.push('/admin-home')
   }
-  
+
 
 
   return( 
-    <ContainerTotal>
-      <LogIn>
-        oie
-      </LogIn>
-      <Video>
-      </Video>     
-      <button onClick={goToAdm}>entrar</button>
-    </ContainerTotal>
-
+    <div>
+      <h1>Cadastro</h1>
+      <form onSubmit={null}>
+        <input
+          value={null}
+          onChange={null}
+          placeholder="email"
+        
+        />
+      
+        <input
+          name={"Senha"}
+          value={null}
+          onChange={null}
+          placeholder="Senha"
+   
+        />
+        <button  onClick={() => goToPage(history, '/admin-home')}>Cadastrar</button>
+      </form>
+  </div>
 
   )
 };
