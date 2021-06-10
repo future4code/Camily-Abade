@@ -1,8 +1,11 @@
 import React from 'react';
-import {useHistory} from "react-router-dom"
+import {useHistory} from "react-router-dom";
+import '../App'
+import {Header, ContainerTotal, Background1, SubFrase, Viagens,} from './StyledAbout'
 
 
-export const About = () => {
+
+export const About = (props) => {
   const history = useHistory()
   
   const goToHome = () => {
@@ -13,12 +16,28 @@ export const About = () => {
     history.goBack()
   }
 
-  return( 
-    <div>
-      <h2>Sou a pagina de Abouuuuuuuuuuut</h2>
-      <button onClick={goToHome}>HOME</button>
-      <button onClick={goBack}>ULTIMA TELA</button>
+  const goToDetalhesPage = () => {
+    history.push('/detalhes-viagem')
+  } 
 
-    </div>
+  return( 
+    <ContainerTotal>
+    <Background1>
+      <Header>
+        <h2>LabeX</h2>
+      </Header>
+      
+      <SubFrase>
+        <Viagens onClick={goToDetalhesPage}>
+          <p>oie</p>
+          <p>nhenhe</p>
+        
+        </Viagens>  
+        <button onClick={props.GetTrip}>Teste Aqui!!</button>        
+      </SubFrase>
+    </Background1>
+
+
+  </ContainerTotal>
   )
 };

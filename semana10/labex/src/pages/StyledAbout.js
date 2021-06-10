@@ -12,7 +12,7 @@ export const Background1 = styled.div`
     rgb(28,28,28, 0.5),
     rgb(28,28,28, 0.6)
   ),
-  url('https://wallpaperaccess.com/full/968401.jpg');
+  url('https://cdn.mos.cms.futurecdn.net/QXuinUc2yoysXmb9Zaw3v8.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -28,37 +28,7 @@ export const Background1 = styled.div`
 export const ContainerTotal = styled.div`
 @import url('https://fonts.googleapis.com/css?family=Raleway:300&display=swap');
 `
-export const AreaAdm = styled.div`
-float: left;
-padding: 5px;
- p{
-  position: relative;
-  color: #fff;
-  text-decoration: none;  
-  margin: 10px 5rem 0 0 ;
-  font-size: 1.2rem;
-  cursor: pointer;
-    &:before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: 0;
-      background-color: #fff;
-      visibility: hidden;
-      -webkit-transform: scaleX(0);
-      transform: scaleX(0);
-      -webkit-transition: all 0.3s ease-in-out 0s;
-      transition: all 0.3s ease-in-out 0s;
-    }
-    &:hover:before {
-      visibility: visible;
-      -webkit-transform: scaleX(1);
-      transform: scaleX(1);
-  }
- }
 
-`
 export const Header = styled.div`
 width: 100%;
 height: 4rem;
@@ -70,10 +40,13 @@ h2{margin: 2rem 0 0 5rem; color: #ffffff; font-size: 1.5rem; cursor: pointer; }
 `
 
 export const SubFrase = styled.div`
-  position: absolute;
-  left: 5rem;
-  bottom : 10rem;
-  button{
+
+`
+export const Viagens = styled.div`
+
+    width: 200px;
+    height: 100px;
+    text-align: left;
     transition: all .5s ease;
     color: #fff;
     border: 3px solid white;
@@ -93,5 +66,4 @@ export const SubFrase = styled.div`
     color: #001F3F;
     background-color: #fff;
     }
-  }
 `

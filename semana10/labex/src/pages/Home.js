@@ -1,6 +1,6 @@
 import React from 'react';
 import {useHistory} from "react-router-dom"
-import {Header, ContainerTotal, Background1, AreaAdm} from './StyledHome'
+import {Header, ContainerTotal, Background1, AreaAdm, SubFrase,} from './StyledHome'
 
 
 export const Home = () => {
@@ -8,23 +8,31 @@ export const Home = () => {
   const goToAboutPage = () => {
     history.push('/about')
   }
+  
+  const goToLogin = () => {
+    history.push('/login')
+  }
+
   return( 
     <ContainerTotal>
-      <Background1>
+      <Background1> 
         <Header>
-          <h2>SpaceX</h2>
+          <h2>LabeX</h2>
           <AreaAdm>
             <h5>
-              <a href="#">
-                Passe o Mouse
-              </a>
+              <p onClick={goToLogin}>
+                LogIn
+              </p>
             </h5>
           </AreaAdm>
-          
         </Header>
-        <button onClick={goToAboutPage}>ABOUT</button>
-        
+        <SubFrase>
+          <h1>O céu era o limite</h1>
+          <h1>E nós ultrapassamos ele</h1>
+          <button onClick={goToAboutPage}>Viagens Abertas</button>          
+        </SubFrase>
       </Background1>
+
 
     </ContainerTotal>
   )
