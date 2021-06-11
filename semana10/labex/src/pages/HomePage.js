@@ -7,7 +7,13 @@ import {ContainerTotal, Background1, Header, AreaAdm, SubFrase} from './StyledHo
 export const HomePage = () => {
   const history = useHistory()
 
-
+  const fazerLogin = () => {
+    if(localStorage.getItem("token")){
+      goToPage(history, '/admin-home')
+    } else{
+      goToPage(history, '/login')
+    }
+  }
 
   return( 
     <ContainerTotal>
@@ -16,7 +22,7 @@ export const HomePage = () => {
           <h2>LabeX</h2>
           <AreaAdm>
             <h5>
-              <p onClick={() => goToPage(history, '/login')}>
+              <p onClick={fazerLogin}>
                 LogIn
               </p>
             </h5>

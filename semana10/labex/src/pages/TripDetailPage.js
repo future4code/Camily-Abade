@@ -12,10 +12,6 @@ export const TripDetailsPage = () => {
   const params = useParams().id
   const [informacoes, setInformacoes]= useState({})
 
-
-
-
-  
   const getTripDetail = (id) => {
     
     const headers = {
@@ -27,7 +23,6 @@ export const TripDetailsPage = () => {
     axios
     .get(`${BASE_URL}/trip/${id}`, headers)
     .then((res) => {
-    console.log(res.data.trip)
     setInformacoes(res.data.trip)
       const list = res.data;
       return list;
@@ -41,8 +36,25 @@ export const TripDetailsPage = () => {
       getTripDetail(params, setInformacoes)
   }, [])
   
+    const candidato = (id, candidatosId, decisao) => {
 
+      const headers = {
+        headers: {
+          auth: localStorage.getItem("token")
+        }
+      }
+      const body = {
+        approve: decisao
+      }
+      axios.put(`${BASE_URL}/trips/${id}/candidates/${candidatosId}/decide`,body, headers)
+      .then((res) => {
+        getTripDetail(params, setInformacoes)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
 
+    }
 
   return( 
     <div>
@@ -57,10 +69,26 @@ export const TripDetailsPage = () => {
 
       <h1>CANDIDATOS PENDENTES</h1>
       {informacoes && informacoes.candidates && informacoes.candidates.map((candidatos) => {
-        return <p key={candidatos.id}>{candidatos.name}</p>
+        return (
+          <div>
+            <p key={candidatos.id}>{candidatos.name}</p>
+            <button onClick={() => candidato (params, candidatos.id, true)}>Aprovar</button>
+            <button onClick={() => candidato (params, candidatos.id, false)}>Reprovar</button>
+          </div>
+
+        )
       })}
       <h1>CANDIDATOS APROVADOS</h1>
+      {informacoes && informacoes.approved && informacoes.approved.map((candidatos) => {
+        return (
+          <div>
+            <p key={candidatos.id}>{candidatos.name}</p>
+            
+          </div>
 
+        )
+      })}
+     
 
     </div>
   )

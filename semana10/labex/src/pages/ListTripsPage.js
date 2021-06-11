@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {useHistory} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 import { goToPage } from '../routes/coordinator';
 import {Header, ContainerTotal, Background1, SubFrase, ContainerViagens ,Viagens, P} from './StyledAbout'
 import { BASE_URL } from "../Constants/Urls";
@@ -8,6 +8,7 @@ import axios from 'axios';
 export const ListTripsPage = () => {
   const history = useHistory()
   const [listTrip, setListTrip] = useState([{}])
+
 
   const PegarViagem =()=>{
     axios.get(`${BASE_URL}/trips`)

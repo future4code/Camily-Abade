@@ -16,9 +16,24 @@ export const ApplicationFormPage = () => {
     pais: ''
   });
 
+  const body ={
+    name: form.nome,
+    age: Number(form.idade),
+    applicationText: form.descricao,
+    profession: form.profissao,
+    country: form.pais
+  }
+
+
   const cadastrar = (event) => {
     event.preventDefault();
-    console.log("Formulário enviado!", form);
+    axios.post(`${BASE_URL}/trips/${form.id}/apply`, body)
+    .then(() => {
+      console.log('YAU')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
     cleanFields();
   };
 
