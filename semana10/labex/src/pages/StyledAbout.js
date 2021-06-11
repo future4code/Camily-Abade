@@ -5,20 +5,19 @@ import styled from 'styled-components';
 export const Background1 = styled.div`
   margin: 0;
   padding: 0;
-  height: 100vh;
-  width: 100vw;
+  max-height: auto;
+  min-height: 100vh;
+  max-width: 100vw;
   background-image: linear-gradient(
     to right bottom,
     rgb(28,28,28, 0.5),
     rgb(28,28,28, 0.6)
   ),
-  url('https://cdn.mos.cms.futurecdn.net/QXuinUc2yoysXmb9Zaw3v8.jpg');
+  url('https://hypescience.com/wp-content/uploads/2014/07/ver-a-terra-do-espaco.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+
   h1, h6 {
   font-family: 'Raleway', sans-serif;
   line-height: 2.5rem;
@@ -40,17 +39,20 @@ h2{margin: 2rem 0 0 5rem; color: #ffffff; font-size: 1.5rem; cursor: pointer; }
 `
 
 export const SubFrase = styled.div`
-
 `
+export const ContainerViagens = styled.div`
+  display: flex;
+  margin: 6rem;
+`
+
 export const Viagens = styled.div`
 
     width: 200px;
-    height: 100px;
+    height: auto;
     text-align: left;
     transition: all .5s ease;
     color: #fff;
     border: 3px solid white;
-    font-family:'Montserrat', sans-serif;
     text-transform: uppercase;
     text-align: center;
     line-height: 1;
@@ -61,9 +63,25 @@ export const Viagens = styled.div`
     border-radius: 4px;
     font-family: 'Raleway', sans-serif;
     cursor: pointer;
+    margin: 2rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
 
     &:hover {
     color: #001F3F;
     background-color: #fff;
     }
+`
+
+export const P = styled.p`
+    padding: 1rem 0 1rem 0;
+  &&:hover{
+    background-color: none;
+    width: 100%;
+    padding: 1rem 0 1rem 0 ;
+  }
+
 `

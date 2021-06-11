@@ -5,6 +5,11 @@ import {AdminHomePage} from "../pages/AdminHomePage";
 import {LoginPage} from "../pages/LoginPage";
 import {ErrorPage} from "../pages/ErrorPage";
 import {ListTripsPage} from "../pages/ListTripsPage"
+import {ApplicationFormPage} from '../pages/ApplicationFormPage'
+import {TripDetailsPage} from '../pages/TripDetailPage'
+import {CreateTripPage} from '../pages/CreateTripPage'
+
+
 
 export const Router = () => {
   return (
@@ -18,14 +23,14 @@ export const Router = () => {
         <Route exact path="/admin-home">
           <AdminHomePage />
         </Route>
-{/* 
-        <Route exact path="/create-trip"> //////// AQUI
+
+        <Route exact path="/create-trip">
           <CreateTripPage />
-        </Route> */}
-{/* 
+        </Route>
+
         <Route exact path="/application-form">
-          <ApplicationFormPage /> ////////// AQUI
-        </Route> */}
+          <ApplicationFormPage/>
+        </Route>
 
         <Route exact path="/list-trips">
           <ListTripsPage />
@@ -35,9 +40,9 @@ export const Router = () => {
           <LoginPage />
         </Route>
 
-        {/* <Route exact path="/detail-trips">
+        <Route exact path="/detail-trips/:id">
           <TripDetailsPage />
-        </Route> */}
+        </Route>
 
         <Route>
           <ErrorPage />
