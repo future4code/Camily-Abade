@@ -5,8 +5,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import useProtectedPage from '../Hooks/useProtectedPage'
 import {ContainerBackground, ContainerViagens, ContainerBotoes, DivTodasViagens} from '../Styled/StyledAdminHome'
-
-
 export const AdminHomePage = () => {
   const history = useHistory()
   useProtectedPage()
@@ -61,12 +59,12 @@ export const AdminHomePage = () => {
       </ContainerBotoes>
       <hr/>
       <DivTodasViagens>
-        <h3>Viagens Postadas</h3>
       {(listTrip.map(trips => {
       return(
         <ContainerViagens>
+          <p>Viagem Postada:</p>
          <p onClick={() => goToPage(history, `/detail-trips/${trips.id}`)}>{trips.name}</p>
-         <button onClick={() => deletarViagem(trips.id)}>X</button>
+         <button onClick={() => deletarViagem(trips.id)}>Remover Viagem</button>
         </ContainerViagens>
       )
     }))}

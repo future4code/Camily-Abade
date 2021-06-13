@@ -4,12 +4,11 @@ import useForm from '../Hooks/UseForm';
 import { BASE_URL } from "../Constants/Urls";
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-
-
-
+import {ContainerTotal, ContianerFormulario} from '../Styled/StyledFormAdm'
 
 
 export const CreateTripPage = () => {
+
   const history = useHistory()
   
   const {form, onChange, cleanFields } = useForm({
@@ -70,9 +69,11 @@ export const CreateTripPage = () => {
 
 
   return( 
-    <div>
-      <button onClick={history.goBack}>Voltar</button>
-      <h2>Sou a pagina de criação</h2>
+    <ContainerTotal>
+      <ContianerFormulario>
+
+
+      <h1> Criar nova Viagem</h1>
       <form onSubmit={cadastrar}>
 
         <input
@@ -126,9 +127,12 @@ export const CreateTripPage = () => {
           required
           type={"number"}
         />
+      <button onClick={cadastrar}>Criar Viagem</button>
+      <button onClick={history.goBack}>Voltar</button>
+
       </form>
 
-    <button onClick={cadastrar}>Add nova Viagem</button>
-    </div>
+      </ContianerFormulario>
+    </ContainerTotal>
   )
 };

@@ -20,6 +20,10 @@ export const Router = () => {
           <HomePage />
         </Route>
 
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+
         <Route exact path="/admin-home">
           <AdminHomePage />
         </Route>

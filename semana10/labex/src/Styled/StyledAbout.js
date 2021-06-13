@@ -36,7 +36,7 @@ h2{margin: 2rem 0 0 5rem; color: #ffffff; font-size: 1.5rem; cursor: pointer; }
   margin: 0;
   h2{
     font-size: 2rem;
-  }
+    }
   }
 `
 
