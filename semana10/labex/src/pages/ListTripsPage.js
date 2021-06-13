@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useHistory, useParams} from "react-router-dom";
 import { goToPage } from '../routes/coordinator';
-import {Header, ContainerTotal, Background1, SubFrase, ContainerViagens ,Viagens, P} from './StyledAbout'
+import {Header, Background, ContainerViagens ,Viagens} from '../Styled/StyledAbout'
 import { BASE_URL } from "../Constants/Urls";
 import axios from 'axios';
 
@@ -21,37 +21,39 @@ export const ListTripsPage = () => {
     })
   }
 
+  useEffect(() => {
+    PegarViagem()
+  }, [])
+
 
 
 
   return( 
-    <ContainerTotal>
+    <>
     
-      <Background1>
+      <Background>
         <Header>
           <h2 onClick={history.goBack}>LabeX</h2>
         </Header>
         
-        <SubFrase>
-          <ContainerViagens onClick={PegarViagem}>
+        <ContainerViagens>
             {(listTrip.map(trips => {
       return(
-        <Viagens>
-         <p>{trips.planet}</p>
+        <Viagens onClick={() => goToPage(history, '/application-form')}>
+         <p>Planeta: {trips.planet}</p>
          <p>{trips.name}</p>
          <p>Data: {trips.date}</p>
-          <p>Duração da viagem: {trips.durationInDays}dias</p>
+          <p>Duração da viagem: {trips.durationInDays} dias</p>
+          <button onClick={() => goToPage(history, '/application-form')}>Clique aqui e Inscreva-se</button>
         </Viagens>
       )
     }))}
           
-          </ContainerViagens>  
-        <button onClick={() => goToPage(history, '/application-form')}>Inscrever-se</button>
+        </ContainerViagens>  
 
-        </SubFrase>
-      </Background1>
+      </Background>
 
 
-    </ContainerTotal>
+    </>
   )
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-export const Background1 = styled.div`
+export const Background = styled.div`
   margin: 0;
   padding: 0;
   max-height: auto;
@@ -13,19 +13,15 @@ export const Background1 = styled.div`
     rgb(28,28,28, 0.5),
     rgb(28,28,28, 0.6)
   ),
-  url('https://hypescience.com/wp-content/uploads/2014/07/ver-a-terra-do-espaco.jpg');
+  url('https://images.pexels.com/photos/76969/cold-front-warm-front-hurricane-felix-76969.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
   background-size: cover;
   background-position: center;
   display: flex;
 
   h1, h6 {
-  font-family: 'Raleway', sans-serif;
   line-height: 2.5rem;
   color: white;
 }
-`
-export const ContainerTotal = styled.div`
-@import url('https://fonts.googleapis.com/css?family=Raleway:300&display=swap');
 `
 
 export const Header = styled.div`
@@ -36,18 +32,29 @@ top: 0;
 display: flex;
 justify-content: space-between;
 h2{margin: 2rem 0 0 5rem; color: #ffffff; font-size: 1.5rem; cursor: pointer; }
+@media(max-width: 520px) {
+  margin: 0;
+  h2{
+    font-size: 2rem;
+  }
+  }
 `
 
-export const SubFrase = styled.div`
-`
 export const ContainerViagens = styled.div`
+  justify-content: space-evenly;
   display: flex;
   margin: 6rem;
+  flex-wrap: wrap;
+
+  @media(max-width: 520px) {
+     margin: 4rem 0 0 0;
+  }
+
 `
 
 export const Viagens = styled.div`
 
-    width: 200px;
+    width: auto;
     height: auto;
     text-align: left;
     transition: all .5s ease;
@@ -73,15 +80,27 @@ export const Viagens = styled.div`
     &:hover {
     color: #001F3F;
     background-color: #fff;
+    button{
+        color: white;
+        border: 2px solid #001F3F;
+        color: #001F3F;
+      }
     }
-`
 
-export const P = styled.p`
-    padding: 1rem 0 1rem 0;
-  &&:hover{
-    background-color: none;
-    width: 100%;
-    padding: 1rem 0 1rem 0 ;
+    button{
+      height: 2rem;
+      background-color: transparent;
+      border: 2px solid white;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+      &:hover{
+        background-color: #001F3F;
+        color: white;
+      }
+    }
+
+    @media(max-width: 520px) {
+      width: 50%;
   }
-
 `

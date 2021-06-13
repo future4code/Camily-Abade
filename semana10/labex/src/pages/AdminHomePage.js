@@ -4,6 +4,8 @@ import { BASE_URL } from "../Constants/Urls";
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import useProtectedPage from '../Hooks/useProtectedPage'
+import {ContainerBackground, ContainerViagens, ContainerBotoes, DivTodasViagens} from '../Styled/StyledAdminHome'
+
 
 export const AdminHomePage = () => {
   const history = useHistory()
@@ -51,23 +53,27 @@ export const AdminHomePage = () => {
   }
 
   return( 
-    <div>
-      <button  onClick={() => goToPage(history, '/home')}>Voltar</button>
-      <button onClick={() => goToPage(history, '/create-trip')}>Criar Viagem</button>
-      <button onClick={logout}>Logout</button>
-      <div>
+    <ContainerBackground>
+      <ContainerBotoes>
+        <button  onClick={() => goToPage(history, '/home')}>Voltar</button>
+        <button onClick={() => goToPage(history, '/create-trip')}>Criar Viagem</button>
+        <button onClick={logout}>Logout</button>
+      </ContainerBotoes>
+      <hr/>
+      <DivTodasViagens>
+        <h3>Viagens Postadas</h3>
       {(listTrip.map(trips => {
       return(
-        <div>
+        <ContainerViagens>
          <p onClick={() => goToPage(history, `/detail-trips/${trips.id}`)}>{trips.name}</p>
          <button onClick={() => deletarViagem(trips.id)}>X</button>
-        </div>
+        </ContainerViagens>
       )
     }))}
-      </div>
+      </DivTodasViagens>
 
       <br/>     
-    </div>
+    </ContainerBackground>
 
 
   )

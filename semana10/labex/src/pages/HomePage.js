@@ -1,13 +1,13 @@
 import React from 'react';
 import {useHistory} from "react-router-dom"
 import {goToPage} from '../routes/coordinator'
-import {ContainerTotal, Background1, Header, AreaAdm, SubFrase} from './StyledHome'
+import {BackgroundFoguete, Header, Login, SubFrase} from '../Styled/StyledHome'
 
 
 export const HomePage = () => {
   const history = useHistory()
 
-  const fazerLogin = () => {
+  const fazerLogin = () => { //Funcao para quando estiver logado não ir para a pagina de login
     if(localStorage.getItem("token")){
       goToPage(history, '/admin-home')
     } else{
@@ -16,26 +16,22 @@ export const HomePage = () => {
   }
 
   return( 
-    <ContainerTotal>
-      <Background1> 
+    <>
+      <BackgroundFoguete> 
         <Header>
           <h2>LabeX</h2>
-          <AreaAdm>
-            <h5>
-              <p onClick={fazerLogin}>
+          <Login>
+              <h3 onClick={fazerLogin}>
                 LogIn
-              </p>
-            </h5>
-          </AreaAdm>
+              </h3>
+          </Login>
         </Header>
         <SubFrase>
           <h1>O céu era o limite</h1>
           <h1>E nós ultrapassamos ele</h1>
           <button onClick={() => goToPage(history, '/list-trips')}>Viagens Abertas</button>          
         </SubFrase>
-      </Background1>
-
-
-    </ContainerTotal>
+      </BackgroundFoguete>
+    </>
   )
 };
