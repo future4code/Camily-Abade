@@ -13,11 +13,9 @@ export const ListTripsPage = () => {
   const PegarViagem =()=>{
     axios.get(`${BASE_URL}/trips`)
     .then((res) => {
-      console.log(res.data.trips)
       setListTrip(res.data.trips)
     })
     .catch((err) => {
-      console.log(err)
     })
   }
 

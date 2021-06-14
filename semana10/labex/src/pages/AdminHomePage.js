@@ -6,19 +6,18 @@ import axios from 'axios'
 import useProtectedPage from '../Hooks/useProtectedPage'
 import {ContainerBackground, ContainerViagens, ContainerBotoes, DivTodasViagens} from '../Styled/StyledAdminHome'
 export const AdminHomePage = () => {
-  const history = useHistory()
   useProtectedPage()
+
+  const history = useHistory()
   
   const [listTrip, setListTrip] = useState([{}])
 
   const PegarViagem =()=>{
     axios.get(`${BASE_URL}/trips`)
     .then((res) => {
-      console.log(res.data.trips)
       setListTrip(res.data.trips)
     })
     .catch((err) => {
-      console.log(err)
     })
   }
   useEffect(() => {
@@ -41,11 +40,10 @@ export const AdminHomePage = () => {
  
     axios.delete(`${BASE_URL}/trips/${id}`, headers)
     .then(() => {
-      console.log('viagem apagada')
+      alert('viagem apagada')
       PegarViagem()
     })
     .catch((err) => {
-      console.log(err)
     })
 
   }
@@ -63,7 +61,8 @@ export const AdminHomePage = () => {
       return(
         <ContainerViagens>
           <p>Viagem Postada:</p>
-         <p onClick={() => goToPage(history, `/detail-trips/${trips.id}`)}>{trips.name}</p>
+         <p >{trips.name}</p>
+         <button onClick={() => goToPage(history, `/detail-trips/${trips.id}`)}>Ver detalhes</button>
          <button onClick={() => deletarViagem(trips.id)}>Remover Viagem</button>
         </ContainerViagens>
       )

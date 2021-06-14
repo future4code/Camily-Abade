@@ -60,6 +60,8 @@ export const ContainerViagens = styled.div`
       border-radius: 4px;
       color: white;
       cursor: pointer;
+      margin: 0.5rem;
+
       &:hover{
         background-color: #001F3F;
         color: white;

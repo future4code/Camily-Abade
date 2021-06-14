@@ -3,11 +3,15 @@ import { goToPage } from '../routes/coordinator';
 import { BASE_URL } from "../Constants/Urls";
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import {ContainerTotal, ContainerViagem, Candidatos, CandidatosPendentes, CandidatosAprovados, ContainerCandidato} from '../Styled/StyledTripDetail'
+import useProtectedPage from '../Hooks/useProtectedPage'
 
 
 
 
 export const TripDetailsPage = () => {
+  useProtectedPage()
+
   const history = useHistory()
   const params = useParams().id
   const [informacoes, setInformacoes]= useState({})
@@ -51,45 +55,63 @@ export const TripDetailsPage = () => {
         getTripDetail(params, setInformacoes)
       })
       .catch((err) => {
-        console.log(err)
       })
 
     }
 
   return( 
-    <div>
-      <button onClick={history.goBack}>Voltar</button>
-      <h2>Sou a pagina de detalhes da viagem, bem como terei as inscrições</h2>
-      <h1>VIAGEM</h1>
-      <p>Nome: {informacoes.name}</p>
-      <p>Descrição: {informacoes.descriptions}</p>
-      <p>Planeta: {informacoes.planet}</p>
-      <p>Duração em dias: {informacoes.durationInDays}</p>
-      <p>Data: {informacoes.date}</p>
+    <ContainerTotal>
+      <ContainerViagem>
+        <div>
+          <button onClick={history.goBack}>Voltar</button>
+          <h2>Detalhes da Viagem</h2>
+          <p>Nome: {informacoes.name}</p>
+          <p>Descrição: {informacoes.descriptions}</p>
+          <p>Planeta: {informacoes.planet}</p>
+          <p>Duração em dias: {informacoes.durationInDays}</p>
+          <p>Data: {informacoes.date}</p>
+        </div>
+      </ContainerViagem>
 
-      <h1>CANDIDATOS PENDENTES</h1>
-      {informacoes && informacoes.candidates && informacoes.candidates.map((candidatos) => {
-        return (
-          <div>
-            <p key={candidatos.id}>{candidatos.name}</p>
-            <button onClick={() => candidato (params, candidatos.id, true)}>Aprovar</button>
-            <button onClick={() => candidato (params, candidatos.id, false)}>Reprovar</button>
-          </div>
+      <Candidatos>
 
-        )
-      })}
-      <h1>CANDIDATOS APROVADOS</h1>
-      {informacoes && informacoes.approved && informacoes.approved.map((candidatos) => {
-        return (
-          <div>
-            <p key={candidatos.id}>{candidatos.name}</p>
-            
-          </div>
+        <CandidatosPendentes>
+          <h2>Candidatos Pendentes</h2>
+          {informacoes && informacoes.candidates && informacoes.candidates.map((candidatos) => {
+            return (
+              <div>
+                <ContainerCandidato>
+                  <p key={candidatos.id}>{candidatos.name}</p>
+                  <p key={candidatos.id}>{candidatos.age} anos</p>
+                  <p key={candidatos.id}>{candidatos.applicationText}</p>
+                  <p key={candidatos.id}>{candidatos.profession}</p>
+                  <p key={candidatos.id}>{candidatos.country}</p>
+                  <button onClick={() => candidato (params, candidatos.id, true)}>Aprovar</button>
+                  <button onClick={() => candidato (params, candidatos.id, false)}>Reprovar</button>
 
-        )
-      })}
-     
+                </ContainerCandidato>
 
-    </div>
+              </div>
+            )
+          })}
+        </CandidatosPendentes>
+
+        <CandidatosAprovados>
+          <h2>Candidatos Aprovados</h2>
+          {informacoes && informacoes.approved && informacoes.approved.map((candidatos) => {
+            return (
+              <div>
+                <p key={candidatos.id}>{candidatos.name}</p>
+                
+              </div>
+
+            )
+          })}
+        </CandidatosAprovados>
+      
+
+      </Candidatos>
+
+    </ContainerTotal>
   )
 };

@@ -50,7 +50,7 @@ export const ContianerFormulario = styled.div`
     margin: 0.3rem;;
   }
   select{
-    width:  80%;
+    width:  81%;
     height: 2rem;
     margin: 0.3rem;;
   }

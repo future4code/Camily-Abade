@@ -3,7 +3,7 @@ import useForm from '../Hooks/UseForm'
 import { BASE_URL } from "../Constants/Urls";
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import {ContainerTotal, ContianerFormulario} from '../Styled/StyledFormAdm'
+import {ContainerTotal, ContianerFormulario} from '../Styled/StyledForm'
 import {useHistory} from "react-router-dom";
 import {goToPage} from '../routes/coordinator'
 
@@ -37,10 +37,9 @@ export const ApplicationFormPage = () => {
     event.preventDefault();
     axios.post(`${BASE_URL}/trips/${form.id}/apply`, body)
     .then(() => {
-      console.log('YAU')
+      alert('Inscrição feita com sucesso!')
     })
     .catch((err) => {
-      console.log(err)
     })
     cleanFields();
   };
@@ -50,10 +49,8 @@ export const ApplicationFormPage = () => {
     axios.get(BASE_URL+'/trips')
     .then((res) => {
       setListTrip(res.data.trips)
-      console.log(res.data.trips)
     })
     .catch((err) => {
-      console.log(err)
     })
   }
   
@@ -63,7 +60,7 @@ export const ApplicationFormPage = () => {
 
   return( 
     <ContainerTotal>
-      <ContianerFormulario>
+      <ContianerFormulario >
 
         <h1 onClick={() => goToPage(history, '/home')}>LabeX</h1>
 

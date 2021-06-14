@@ -4,10 +4,12 @@ import useForm from '../Hooks/UseForm';
 import { BASE_URL } from "../Constants/Urls";
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import {ContainerTotal, ContianerFormulario} from '../Styled/StyledFormAdm'
+import {ContainerTotal, ContianerFormulario} from '../Styled/StyledForm'
+import useProtectedPage from '../Hooks/useProtectedPage'
 
 
 export const CreateTripPage = () => {
+  useProtectedPage()
 
   const history = useHistory()
   
@@ -51,16 +53,14 @@ export const CreateTripPage = () => {
   const cadastrar = (event) => {
     event.preventDefault();
 
-    console.log("Formulário enviado!", headers, body)
 
 
     axios.post(`${BASE_URL}/trips`, body, headers)
     .then(() => {
-    console.log('ENTROU AQUI')
+    alert("Viagem criada com sucesso!!")
       
       })
     .catch((err) => {
-      console.log(err.response.data, 'deu erro auqui ein')
     })
       
     cleanFields();
