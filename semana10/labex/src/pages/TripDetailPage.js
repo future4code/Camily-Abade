@@ -66,7 +66,7 @@ export const TripDetailsPage = () => {
           <button onClick={history.goBack}>Voltar</button>
           <h2>Detalhes da Viagem</h2>
           <p>Nome: {informacoes.name}</p>
-          <p>Descrição: {informacoes.descriptions}</p>
+          <p>Descrição: {informacoes.description}</p>
           <p>Planeta: {informacoes.planet}</p>
           <p>Duração em dias: {informacoes.durationInDays}</p>
           <p>Data: {informacoes.date}</p>

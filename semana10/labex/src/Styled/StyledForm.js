@@ -61,6 +61,7 @@ export const ContianerFormulario = styled.div`
     padding: 1rem;
     margin: 1rem;
     color: white;
+    cursor: pointer;
     &:hover{
       background-color: darkblue;
       color: white;
