@@ -1,0 +1,16 @@
+.containerEntra{
+  position:absolute;
+  top: -1rem;
+  right: 1rem;
+}
+
+.containerSai{
+  position:absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.limpa{
+  position: absolute;
+  bottom: 1rem;
+}
