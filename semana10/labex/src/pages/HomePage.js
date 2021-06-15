@@ -14,7 +14,6 @@ export const HomePage = () => {
       goToPage(history, '/login')
     }
   }
-
   return( 
     <>
       <BackgroundFoguete> 

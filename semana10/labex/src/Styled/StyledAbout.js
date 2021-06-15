@@ -17,7 +17,6 @@ export const Background = styled.div`
   background-size: cover;
   background-position: center;
   display: flex;
-
   h1, h6 {
   line-height: 2.5rem;
   color: white;
