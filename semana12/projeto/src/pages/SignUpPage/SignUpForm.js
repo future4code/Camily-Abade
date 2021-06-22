@@ -1,25 +1,30 @@
 import useForm from '../../hooks/useForm'
 import { useHistory } from "react-router-dom"
-import { goToSignUp } from "../../routes/cordinator"
-import {login} from '../../services/user'
 import useUnProtectedPage from '../../hooks/useUnprotectedPage'
+import { signUp } from '../../services/user'
 
-
-const LoginForm = () => {
+const SignUpForm = () => {
     useUnProtectedPage()
+    const [form, onChange, Clear] = useForm({ username:"", email: "", password:""})
     const history = useHistory()
-    const [form, onChange, Clear] = useForm({email: "", password:""})
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        login(form, Clear, history)
+        signUp(form, Clear, history)
     }
-
     
     return(
     <div>
-        <h3>LoginPage</h3>
+        <h3>FAZER CADASTRO</h3>
         <form onSubmit={onSubmitForm}>
+        <input 
+                name={"username"} 
+                value={form.username}
+                onChange={onChange}
+                label={"Nome"}
+                required
+                type={'text'}
+            />
             <input 
                 name={"email"} 
                 value={form.email}
@@ -34,19 +39,15 @@ const LoginForm = () => {
                 onChange={onChange}
                 label={"Senha"}
                 required
-                typep={'password'}
+                type={'password'}
             />
             <button
             type={'submit'}
-            >Fazer Login</button>
-
+            >Fazer cadastro</button>
 
         </form>
-            <p
-            onClick={() => goToSignUp (history)}
-            type={'submit'}
-            >Ainda não tem cadastro? Clique aqui!</p>
+     
     </div>
     )
 }
-export default LoginForm;
+export default SignUpForm;
