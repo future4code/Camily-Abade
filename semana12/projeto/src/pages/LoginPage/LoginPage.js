@@ -2,10 +2,10 @@ import React from 'react'
 import useUnProtectedPage from '../../hooks/useUnprotectedPage'
 import LoginForm from './LoginForm'
 
-const LoginPage = () => {
+const LoginPage = ({setButtonLoginLogOut}) => {
     useUnProtectedPage()
     return(
-        <LoginForm/>
+        <LoginForm setButtonLoginLogOut={setButtonLoginLogOut}/>
     )
 }
 

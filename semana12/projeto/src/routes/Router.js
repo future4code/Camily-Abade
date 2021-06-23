@@ -4,36 +4,32 @@ import LoginPage from '../pages/LoginPage/LoginPage';
 import PostPage from '../pages/PostPage/PostPage';
 import SignUpPage from '../pages/SignUpPage/SignUpPage';
 import Error from '../pages/Error/Error';
-import Header from '../components/Header';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
-const Router = () => {
+const Router = ({setButtonLoginLogOut}) => {
     return(
-        <BrowserRouter>
-            <Header/>
-            <Switch>
-                <Route exact path='/login' >
-                    <LoginPage/>
-                </Route>
+        <Switch>
+            <Route exact path='/login' >
+                <LoginPage setButtonLoginLogOut={setButtonLoginLogOut}/>
+            </Route>
 
-                <Route exact path='/cadastro'>
-                    <SignUpPage/>
-                </Route>
-                
-                <Route exact path='/'>
-                    <FeedPage/>
-                </Route>
+            <Route exact path='/cadastro'>
+                <SignUpPage setButtonLoginLogOut={setButtonLoginLogOut}/>
+            </Route>
+            
+            <Route exact path='/'>
+                <FeedPage/>
+            </Route>
 
-                <Route exact path='/adicionar-post'>
-                    <PostPage/>
-                </Route>
+            <Route exact path='/adicionar-post'>
+                <PostPage/>
+            </Route>
 
-                <Route>
-                    <Error/>
-                </Route>
+            <Route>
+                <Error/>
+            </Route>
 
-            </Switch>
-        </BrowserRouter>
+        </Switch>
     )
 }
 

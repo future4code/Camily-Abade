@@ -5,14 +5,14 @@ import {login} from '../../services/user'
 import useUnProtectedPage from '../../hooks/useUnprotectedPage'
 
 
-const LoginForm = () => {
+const LoginForm = ({setButtonLoginLogOut}) => {
     useUnProtectedPage()
     const history = useHistory()
     const [form, onChange, Clear] = useForm({email: "", password:""})
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        login(form, Clear, history)
+        login(form, Clear, history, setButtonLoginLogOut)
     }
 
     

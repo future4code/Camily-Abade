@@ -3,14 +3,14 @@ import { useHistory } from "react-router-dom"
 import useUnProtectedPage from '../../hooks/useUnprotectedPage'
 import { signUp } from '../../services/user'
 
-const SignUpForm = () => {
+const SignUpForm = ({setButtonLoginLogOut}) => {
     useUnProtectedPage()
     const [form, onChange, Clear] = useForm({ username:"", email: "", password:""})
     const history = useHistory()
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        signUp(form, Clear, history)
+        signUp(form, Clear, history, setButtonLoginLogOut)
     }
     
     return(
