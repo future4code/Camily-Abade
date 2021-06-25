@@ -1,9 +1,10 @@
 import React from 'react';
 import FeedPage from '../pages/FeedPage/FeedPage';
 import LoginPage from '../pages/LoginPage/LoginPage';
-import PostPage from '../pages/PostPage/PostPage';
+import DetailPostPage from '../pages/DetailPostPage/DetailPostPage';
 import SignUpPage from '../pages/SignUpPage/SignUpPage';
 import Error from '../pages/Error/Error';
+
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 const Router = ({setButtonLoginLogOut}) => {
@@ -21,8 +22,8 @@ const Router = ({setButtonLoginLogOut}) => {
                 <FeedPage/>
             </Route>
 
-            <Route exact path='/adicionar-post'>
-                <PostPage/>
+            <Route exact path='/detalhes/:id'>
+                <DetailPostPage/>
             </Route>
 
             <Route>

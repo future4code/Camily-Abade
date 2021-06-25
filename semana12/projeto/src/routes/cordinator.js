@@ -6,8 +6,8 @@ export const goToSignUp = (history) => {
     history.push('/cadastro')
 }
 
-export const goPost = (history) => {
-    history.push('/adicionar-post')
+export const goToPost = (history, id) => {
+    history.push(`/detalhes/${id}`)
 }
 
 export const goToFeed = (history) => {
