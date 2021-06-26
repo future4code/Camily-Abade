@@ -18,11 +18,12 @@ const DetailPostPage = () => {
     useProtectedPage()
     const params = useParams().id
     const postDetail = useRequestData({}, `${BASE_URL}/posts/${params}/comments`)
+
     const feed = useRequestData([], `${BASE_URL}/posts`)
     const [form, onChange, Clear] = useForm({body:""})
 
     const post = feed.length > 0 && feed.map((post) => {
-        if (params === post.id){
+        if(params === post.id){
             return(
                 <Post>
                     <p>{post.username}</p>
@@ -31,11 +32,15 @@ const DetailPostPage = () => {
         }
     })
 
-    const comentariosPost = postDetail.length > 0 && postDetail.map((post) => {
+
+
+    const comentarios = postDetail.length > 0 && postDetail.map((post) => {
         return(
                 <div>
+                    <hr/>
                     <p>{post.username}</p>
                     <p>{post.body}</p>
+                    
                 </div>
             )
     })
@@ -65,7 +70,7 @@ const DetailPostPage = () => {
                 >Postar</button>
 
             </form>
-            {comentariosPost}
+            {comentarios}
         </div>
 
     )
