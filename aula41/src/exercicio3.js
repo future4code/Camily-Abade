@@ -1,4 +1,2 @@
-const tarefa = Array(process.argv[2])
-
-
-
+var tarefa = (process.argv.slice(2));
+console.log(tarefa);
