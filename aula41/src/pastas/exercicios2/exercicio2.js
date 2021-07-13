@@ -3,7 +3,7 @@ const valor1 = Number(process.argv[3])
 const valor2 = Number(process.argv[4])
 
 switch(operacao){
-	case "add":
+	case "soma":
         console.log(`Resposta: ${valor1 + valor2}`)
         break;
 	case "sub":

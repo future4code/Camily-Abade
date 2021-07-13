@@ -1,0 +1,11 @@
+{
+  "name": "exercicios3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exercicio3.js",
+  "scripts": {
+    "test": "node ./exercicio3.js"
+  },
+  "author": "camily abade",
+  "license": "ISC"
+}
