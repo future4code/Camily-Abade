@@ -1,11 +1,11 @@
 import { app } from "./app"
-import { deleteCountryById } from "./endpoints/deleteCountryById"
+import { getSearch } from "./endpoints/getSearch"
 import { getAllCountries } from "./endpoints/getAllCountries"
 import { getCountryById } from "./endpoints/getCountryById"
-import { getRandomCountry } from "./endpoints/getRandomCountry"
+import { getNewCountry } from "./endpoints/getNewCountry"
 
 app.get("/countries", getAllCountries)
-app.get("/countries/random", getRandomCountry) // precisa vir antes de /countries/:id
+app.get("/countries/search", getSearch)
+
 app.get("/countries/:id", getCountryById)
-app.get("/countries/:valor", (req, res) => { res.send("resposta") }) // nunca será acessada );
-app.delete("/countries/:id", deleteCountryById)
+app.post("/countries/:id", getNewCountry) // nunca será acessada );
