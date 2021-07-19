@@ -1,0 +1,15 @@
+### exercício1
+
+-- a) VARCHAR(n) strings de no maximo c caracteres;
+-- a) DATE: repressenta uma data (YYY/DD/MM);
+-- a) PRIMARY_KEY: identifica de forma única cada registro em uma tabela de banco de dados;
+-- a) NOT NULL: indica que x informação não pode ser nula;
+
+-- b) SHOW_DATABASES: retorna o nome do banco de dados;
+-- b) SHOW_TABLES: nome das minhas tabelas;
+
+-- c) DESCRIBE: mostra a estrutura da tabela
+
+### exercício 2
+
+-- b)
