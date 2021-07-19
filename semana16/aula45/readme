@@ -12,4 +12,24 @@
 
 ### exercício 2
 
--- b)
+-- b) Código de erro: 1062. Entrada duplicada '002' para a chave 'PRIMARY'. Não pode haver duas key-primary iguais
+-- c) Código de erro: 1136. A contagem de colunas não corresponde à contagem de valores na linha 1. O erro ocorre pq estava faltando duas colunas no VALUES
+-- d) O erro e porque a coluna name nao apareceu em VALUES e nao ha um valor default para este item.
+-- e) O erro aconteceu pq valor birth_date não estava como string
+
+### exercício 3
+-- c)  A tabela retornou vazia por não ter nenhum gender = 'invalid'
+-- e) O erro acontece porque o name estava escrito errado
+
+### exercício 4
+
+
+### exercício 5
+
+
+### exercício 6
+
+### exercício 7
+
+
+
