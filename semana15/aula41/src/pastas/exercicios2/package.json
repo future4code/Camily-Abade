@@ -1,0 +1,11 @@
+{
+  "name": "exercicios2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exercicio2.js",
+  "scripts": {
+    "test": "node ./exercicio2.js"
+  },
+  "author": "camily abade",
+  "license": "ISC"
+}
