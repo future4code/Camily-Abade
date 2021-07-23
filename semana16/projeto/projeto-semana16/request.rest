@@ -1,0 +1,45 @@
+
+###lembrar de instalar a extensão Client Rest
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+  "name": "Daniel",
+  "nickname": "Dani",
+  "email": "DaniYau@gmail.com"
+}
+
+###
+
+get http://localhost:3003/user/001
+Content-Type: application/json
+
+
+###
+put http://localhost:3003/user/edit/001
+Content-Type: application/json
+{
+  "name": "Astrodev",
+  "nickname": "astrodev"
+}
+
+###
+
+post http://localhost:3003/task 
+Content-Type: application/json
+
+{
+	"title": "lavar os sapatos",
+	"description": "lavar o tenis",
+	"limitDate": "04/05/2020",
+	"creatorUserId": "001"
+}
+
+###
+
+get http://localhost:3003/task/001
+Content-Type: application/json
+
+###
+
+get http://localhost:3003/task/001
