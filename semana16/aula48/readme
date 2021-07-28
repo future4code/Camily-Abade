@@ -1,0 +1,25 @@
+### Exercício 1
+
+    a)  faz referência a outra tabela;
+    
+    b)     CREATE TABLE Rating2 (
+            id VARCHAR(255) PRIMARY KEY,
+            comment TEXT NOT NULL,
+            rate FLOAT NOT NULL,
+            movie_id VARCHAR(255),
+            FOREIGN KEY (movie_id) REFERENCES Movie2(id)
+        );
+
+        INSERT INTO Rating2 VALUES 
+        (
+            "004",
+            "Muita putaria!",
+            4,
+            "004"
+        ); 
+    
+    c)  Não foi possível criar pq a chave não encontrou o ID
+    
+    d)  ALTER TABLE Rating2 DROP COLUMN rate;
+    
+### Exercício 2
