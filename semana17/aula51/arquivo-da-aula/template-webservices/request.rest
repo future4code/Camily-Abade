@@ -1,0 +1,13 @@
+###
+
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name":  "daznieasl",
+    "nickname":  "medesczulpa",
+    "email": "daniiel@gmazil.com",
+    "zipcode": "81020050",
+    "number": "010",
+    "address":  "casinha"
+}
