@@ -23,3 +23,19 @@
     d)  ALTER TABLE Rating2 DROP COLUMN rate;
     
 ### Exercício 2
+
+    a) Está criando uma nova tabela chamada movieCast, tem dois lugares para add valores e dois que estão relacionando os valores a outras duas tabelas
+
+    b)  INSERT INTO MovieCast VALUES 
+        ("001", "002");
+
+    c)  Não foi possível criar pq a chave não encontrou o ID
+
+    d) Não pode apagar pq ele está sendo associado a uma chave
+
+### Exercício 3
+
+    a)  -- Na query em questao ela esta juntando todos os registros da tabela Movie que tiverem um registro de rating associado a elas com os respectivos IDs, aos dados da tabela Rating e seleciona tadas as colunas das duas tabelas.
+
+    b)  Select title, Movie_id, rate from Movie2 inner join Rating On Movie2.id = Rating.movie_id;
+
